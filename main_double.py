@@ -17,19 +17,21 @@ import optimal_control.casadi_adam.conf_ur5 as conf_ur5
 import torch
 import torch.optim as optim
 import torch.nn as nn
-device='cuda' if torch.cuda.is_available() else 'cpu'
+
 # ====================== Robot and Dynamics Setup ======================
 np.set_printoptions(precision=3, linewidth=200, suppress=True)
-'''r = load('double_pendulum')
+r = load('double_pendulum')
 robot = RobotWrapper(r.model, r.collision_model, r.visual_model)
-nq, nv = robot.nq, robot.nv'''
-nq = 1
+nq, nv = robot.nq, robot.nv
+nq = 2
 nx = 2 * nq
 
 dt = 0.2
-N = 1000
+N = 100
 # Initial state (random but within reasonable bounds)
- # Start from rest
+x_init = np.zeros(nx)
+x_init[:nq] = (np.random.rand(nq) - 0.5) * 0.5  # Small initial angles
+x_init[nq:] = 10.0  # Start from rest
 q_des = np.zeros(nq)
 w_p = 1.0              # position weight
 w_v = 1e-2             # velocity weight
@@ -38,18 +40,25 @@ w_p_final = 10.0        # position weight for terminal cost
 w_v_final = 1.0  
 
 # CasADi symbolic variables
-
-
-m = 5.0
+m = 50.0
 g = 9.81
 I = 15.0
 
 x = cs.SX.sym('x', nx)   # [q, dq]
 u = cs.SX.sym('u', nq)   # [tau]
 
-q  = x[0]
-dq = x[1]
-tau = u[0]
+q  = cs.vertcat(
+    x[0],
+    x[1]
+)
+dq = cs.vertcat(
+    x[2],
+    x[3]
+)
+tau = cs.vertcat(
+    u[0],
+    u[1]
+)
 
 # dynamics
 ddq = (tau + m*g*cs.sin(q)) / I
@@ -64,10 +73,10 @@ f = cs.Function('f', [x, u], [xdot])
 
 q0 = np.zeros(nq)
 dq0 = np.zeros(nq)
-'''r = RobotWrapper(robot.model, robot.collision_model, robot.visual_model)
+r = RobotWrapper(robot.model, robot.collision_model, robot.visual_model)
 simu = RobotSimulator(conf_ur5, r)
 simu.init(q0, dq0)
-simu.display(q0)'''
+simu.display(q0)
 # Inverse dynamics
 '''kinDyn = KinDynComputations(robot.urdf, joints_name_list)
 H_b = cs.SX.eye(4)
@@ -117,13 +126,13 @@ def define_running_cost_and_dynamics(opti, X, U, N, dt, x_init, w_p, w_v, w_a, M
     if M is not None:
         for k in range(M):     
             # Compute cost function
-            cost += w_p * (X[k][:nq] - q_des).T @ (X[k][:nq] - q_des) * dt 
+            cost += w_p * (X[k][:nq]).T @ (X[k][:nq]) * dt 
             cost += w_v * X[k][nq:].T @ X[k][nq:] * dt
             cost += w_a * U[k].T @ U[k] * dt
 
             # Add dynamics constraints
             opti.subject_to(X[k+1] == X[k] + dt * f(X[k], U[k]))
-            #opti.subject_to(X[-1][:nq] == q_des)
+            
             # Add joint position limits (adjust these values as needed)
             #opti.subject_to(opti.bounded(-np.pi, X[k][:nq], np.pi))
             
@@ -133,13 +142,13 @@ def define_running_cost_and_dynamics(opti, X, U, N, dt, x_init, w_p, w_v, w_a, M
     else:
         for k in range(N):     
             # Compute cost function
-            cost += w_p * (X[k][:nq] - q_des).T @ (X[k][:nq] - q_des) * dt 
+            cost += w_p * (X[k][:nq]).T @ (X[k][:nq]) * dt 
             cost += w_v * X[k][nq:].T @ X[k][nq:] * dt
             cost += w_a * U[k].T @ U[k] * dt
 
             # Add dynamics constraints
             opti.subject_to(X[k+1] == X[k] + dt * f(X[k], U[k]))
-            #opti.subject_to(X[-1][:nq] == q_des)
+            
             # Add joint position limits (adjust these values as needed)
             #opti.subject_to(opti.bounded(-np.pi, X[k][:nq], np.pi))
             
@@ -152,6 +161,7 @@ def define_running_cost_and_dynamics(opti, X, U, N, dt, x_init, w_p, w_v, w_a, M
 
 def define_terminal_cost_and_constraints(opti, X, q_des, w_p_final):
     
+    #cost = w_p_final * (X[-1][:nq]).T @ (X[-1][:nq])
     cost = 0
     return cost
 
@@ -181,32 +191,6 @@ def create_and_solve_ocp(N, nx, nq, dt, x_init,
 
 def extract_solution(sol, X, U, M=None):
     if M is None:
-        x_sol = np.array([np.array(sol.value(X[k])).flatten() for k in range(N + 1)])
-        ddq_sol = np.array([np.array(sol.value(U[k])).flatten() for k in range(N)])
-        q_sol = x_sol[:, :nq].T  # Shape: (nq, N+1)
-        dq_sol = x_sol[:, nq:].T  # Shape: (nq, N+1)
-        tau = np.zeros((nq, N))
-        for i in range(N):
-            for j in range(nq):
-                # Handle 1D case for ddq_sol
-                ddq_val = ddq_sol[i] if ddq_sol.ndim == 1 else ddq_sol[i, j]
-                tau[j, i] = I * ddq_val - m * g * np.sin(q_sol[j, i])
-    else:
-        x_sol = np.array([np.array(sol.value(X[k])).flatten() for k in range(M + 1)])
-        ddq_sol = np.array([np.array(sol.value(U[k])).flatten() for k in range(M)])
-        q_sol = x_sol[:, :nq].T  # Shape: (nq, M+1)
-        dq_sol = x_sol[:, nq:].T  # Shape: (nq, M+1)
-        tau = np.zeros((nq, M))
-        for i in range(M):
-            for j in range(nq):
-                # Handle 1D case for ddq_sol
-                ddq_val = ddq_sol[i] if ddq_sol.ndim == 1 else ddq_sol[i, j]
-                tau[j, i] = I * ddq_val - m * g * np.sin(q_sol[j, i])
-    
-    return q_sol, dq_sol, ddq_sol, tau
-
-'''def extract_solution(sol, X, U, M=None):
-    if M is None:
         x_sol = np.array([sol.value(X[k]) for k in range(N + 1)]).T
         ddq_sol = np.array([sol.value(U[k]) for k in range(N)]).T
         q_sol = x_sol[:nq, :]
@@ -228,7 +212,7 @@ def extract_solution(sol, X, U, M=None):
             q_i = q_sol[i, :] if q_sol.ndim > 1 else q_sol
             ddq_i = ddq_sol[i, :] if ddq_sol.ndim > 1 else ddq_sol
             tau[i] = I * ddq_i - m * g * np.sin(q_i)
-    return q_sol, dq_sol, ddq_sol, tau'''
+    return q_sol, dq_sol, ddq_sol, tau
 
 def display_motion(q_traj):
     for i in range(N + 1):
@@ -251,10 +235,10 @@ if __name__=='__main__':
     X_init_val_casadi = []
     X_init_test = np.zeros(nx)
 
-    for i in range(10):
+    for i in range(1000):
         x_init = np.zeros(nx)
-        x_init[:nq] = (np.random.rand(nq) - 0.5) * 0.005  # Small initial angles
-        x_init[nq:] = (np.random.rand(nq) - 0.5) * 0.005
+        x_init[:nq] = (np.random.rand(nq) - 0.5) * 0.5  # Small initial angles
+        x_init[nq:] = (np.random.rand(nq) - 0.5) * 10.0
         sol, X, U, J_opt = create_and_solve_ocp(
             N, nx, nq, dt, x_init,
             log_w_p, 10**log_w_v, 10**log_w_a, 10**log_w_final, None, None)
@@ -276,8 +260,8 @@ if __name__=='__main__':
    
     # Initialize neural network with input size matching state dimension
 
-    net = NeuralNetwork(input_size=2, hidden_size=64, output_size=1).to(device)
-    optimizer = optim.Adam(net.parameters(), lr=0.01)
+    net = NeuralNetwork(input_size=4, hidden_size=64, output_size=2).to(device)
+    optimizer = optim.Adam(net.parameters(), lr=0.1)
     print("input tensor shape hi", x_init)
 
     loss_fn = nn.MSELoss()
@@ -290,7 +274,7 @@ if __name__=='__main__':
 
 
     # Training loop
-    for i in range(1,9):
+    for i in range(1,999):
         # Zero the parameter gradients
         optimizer.zero_grad()
         print("input tensor shape", X_init_val[i])
@@ -300,12 +284,10 @@ if __name__=='__main__':
         target = J_X_init[i].to(device)
 
         J_pred = J_pred.to(device)
-        J_pred = J_pred.squeeze(1)
         print("J_pred shape", J_pred.shape)
         print("target shape", target.shape)
         print("J_pred.requires_grad:", J_pred.requires_grad)
         print("loss_fn input shapes:", J_pred.shape, target.shape)
-       
         # Calculate loss
         loss = loss_fn(J_pred, target)
         # Backward pass and optimize
@@ -319,10 +301,10 @@ if __name__=='__main__':
     # After training, get the terminal cost prediction
     with torch.no_grad():
         #X_init_tensor = torch.tensor(X_init, dtype=torch.float32).unsqueeze(0)  # Add batch dimension
-        nn_func = net.create_casadi_function("NeuralNetwork", "./final_project/", 2, True)
+        nn_func = net.create_casadi_function("NeuralNetwork", "./final_project/", 4, True)
         J_terminal = []
         Jterm_test = []
-        for i in range(9,10):
+        for i in range(999, 1000):
             print("input shape", X_init_val_casadi[i])
             Jterm = nn_func(X_init_val_casadi[i])
             x_init_test = X_init_val_casadi[i]
