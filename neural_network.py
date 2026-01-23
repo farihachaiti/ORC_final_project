@@ -6,9 +6,6 @@ class NeuralNetwork(nn.Module):
     """ A simple feedforward neural network. """
     def __init__(self, input_size, hidden_size, output_size, activation=nn.Tanh(), ub=None):
         super().__init__()
-        print(input_size, "input size")
-        print(output_size, "output size")
-        print(hidden_size, "hidden size")
         self.linear_stack = nn.Sequential(
             nn.Linear(input_size, hidden_size),
             activation,
@@ -17,24 +14,18 @@ class NeuralNetwork(nn.Module):
             nn.Linear(hidden_size, output_size),
             activation,
         )
-        self.ub = ub if ub is not None else 1 # upper bound of the output layer
+        self.ub = ub if ub is not None else torch.tensor(1, dtype=torch.float32) # upper bound of the output layer
         self.initialize_weights()
 
     def forward(self, x):
         
         x = x.mT
         x = x.squeeze(-1)
-  
-
-        print(x)
-        print(x.shape, "x shape")
-        print(next(self.parameters()).device, "device")
-        print(self.ub, "ub")
         if not isinstance(x, torch.Tensor):
             x = torch.tensor(x, dtype=torch.float32)
         x = x.to(next(self.parameters()).device)  # Move input to model's device
 
-        out = self.linear_stack(x)
+        out = self.linear_stack(x) * self.ub
         return out
    
     def initialize_weights(self):
@@ -74,7 +65,6 @@ class NeuralNetwork(nn.Module):
         
         # Create input symbols with the correct shape
         state = MX.sym("x", input_size)
-        print("state shape", state)
         # Create the L4CasADi model
         self.l4c_model = l4c.L4CasADi(
             self,

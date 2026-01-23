@@ -17,21 +17,18 @@ import optimal_control.casadi_adam.conf_ur5 as conf_ur5
 import torch
 import torch.optim as optim
 import torch.nn as nn
-
+device='cuda' if torch.cuda.is_available() else 'cpu'
 # ====================== Robot and Dynamics Setup ======================
 np.set_printoptions(precision=3, linewidth=200, suppress=True)
 r = load('double_pendulum')
 robot = RobotWrapper(r.model, r.collision_model, r.visual_model)
 nq, nv = robot.nq, robot.nv
-nq = 2
+
 nx = 2 * nq
 
 dt = 0.2
-N = 100
-# Initial state (random but within reasonable bounds)
-x_init = np.zeros(nx)
-x_init[:nq] = (np.random.rand(nq) - 0.5) * 0.5  # Small initial angles
-x_init[nq:] = 10.0  # Start from rest
+N = 1000
+# Start from rest
 q_des = np.zeros(nq)
 w_p = 1.0              # position weight
 w_v = 1e-2             # velocity weight
@@ -40,7 +37,7 @@ w_p_final = 10.0        # position weight for terminal cost
 w_v_final = 1.0  
 
 # CasADi symbolic variables
-m = 50.0
+m = 5.0
 g = 9.81
 I = 15.0
 
@@ -132,7 +129,7 @@ def define_running_cost_and_dynamics(opti, X, U, N, dt, x_init, w_p, w_v, w_a, M
 
             # Add dynamics constraints
             opti.subject_to(X[k+1] == X[k] + dt * f(X[k], U[k]))
-            
+            #opti.subject_to(X[-1][:nq] == q_des)
             # Add joint position limits (adjust these values as needed)
             #opti.subject_to(opti.bounded(-np.pi, X[k][:nq], np.pi))
             
@@ -148,7 +145,7 @@ def define_running_cost_and_dynamics(opti, X, U, N, dt, x_init, w_p, w_v, w_a, M
 
             # Add dynamics constraints
             opti.subject_to(X[k+1] == X[k] + dt * f(X[k], U[k]))
-            
+            #opti.subject_to(X[-1][:nq] == q_des)
             # Add joint position limits (adjust these values as needed)
             #opti.subject_to(opti.bounded(-np.pi, X[k][:nq], np.pi))
             
@@ -159,30 +156,43 @@ def define_running_cost_and_dynamics(opti, X, U, N, dt, x_init, w_p, w_v, w_a, M
     return cost
 
 
-def define_terminal_cost_and_constraints(opti, X, q_des, w_p_final):
+def define_terminal_cost_and_constraints(opti, X, q_des, w_p_final, J_terminal=None):
+    terminal_cost = 0
+    # Terminal cost from the neural network or quadratic cost
+    if J_terminal is not None:
+        terminal_cost = cs.sum1(J_terminal(X[-1]))
+    # Add terminal constraint (optional but often useful)
+    opti.subject_to(X[-1][:nq] == q_des)  # Uncomment to enforce terminal state exactly
     
-    #cost = w_p_final * (X[-1][:nq]).T @ (X[-1][:nq])
-    cost = 0
-    return cost
+    return terminal_cost
 
 
 def create_and_solve_ocp(N, nx, nq, dt, x_init,
                          w_p, w_v, w_a, w_p_final, J_terminal=None, M=None):
     opti, X, U = create_decision_variables(N, nx, nq, M)
     running_cost = define_running_cost_and_dynamics(opti, X, U, N, dt, x_init, w_p, w_v, w_a, M)
-    terminal_cost = define_terminal_cost_and_constraints(opti, X, q_des, w_p_final)
-    if J_terminal is not None:
-        terminal_cost += J_terminal
+    terminal_cost = define_terminal_cost_and_constraints(opti, X, q_des, w_p_final, J_terminal)
+    '''if J_terminal is not None:
+        terminal_cost += J_terminal'''
     print("terminal cost", terminal_cost)
+    
+    # Combine running and terminal costs
+    total_cost = running_cost + terminal_cost
+    opti.minimize(total_cost)
 
-    opti.minimize(running_cost + terminal_cost)
-
-    opts = {"ipopt.print_level": 0, "print_time": 0, "ipopt.tol": 1e-4}
+    opts = {
+        "ipopt.print_level": 0,
+        "print_time": 0,
+        "ipopt.max_iter": 50000,
+        "ipopt.tol": 1e-4,
+        "ipopt.acceptable_tol": 1e-3,
+        "ipopt.acceptable_iter": 15,
+    }
     opti.solver("ipopt", opts)
 
     t0 = time.time()
     sol = opti.solve()
-    J_opt = sol.value(running_cost + terminal_cost)
+    J_opt = sol.value(total_cost)
     print(f"Solver time: {time.time() - t0:.2f}s")
     return sol, X, U, J_opt
 
@@ -195,23 +205,23 @@ def extract_solution(sol, X, U, M=None):
         ddq_sol = np.array([sol.value(U[k]) for k in range(N)]).T
         q_sol = x_sol[:nq, :]
         dq_sol = x_sol[nq:, :]
-        tau = np.zeros((nq, N))
+        tau = np.zeros((nq, N))  # Note: N controls here
         for i in range(N):
-            # Handle 1D array case
-            q_i = q_sol[i, :] if q_sol.ndim > 1 else q_sol
-            ddq_i = ddq_sol[i, :] if ddq_sol.ndim > 1 else ddq_sol
-            tau[i] = I * ddq_i - m * g * np.sin(q_i)
+            # Use full state for both joints
+            q_i = q_sol[:, i]  # Get both joint angles
+            ddq_i = ddq_sol[:, i]  # Get both joint accelerations
+            tau[:, i] = I * ddq_i - m * g * np.sin(q_i)  # Compute torque for both joints
     else:
         x_sol = np.array([sol.value(X[k]) for k in range(M + 1)]).T
         ddq_sol = np.array([sol.value(U[k]) for k in range(M)]).T
         q_sol = x_sol[:nq, :]
         dq_sol = x_sol[nq:, :]
-        tau = np.zeros((nq, M))
+        tau = np.zeros((nq, M))  # Note: M controls here
         for i in range(M):
-            # Handle 1D array case
-            q_i = q_sol[i, :] if q_sol.ndim > 1 else q_sol
-            ddq_i = ddq_sol[i, :] if ddq_sol.ndim > 1 else ddq_sol
-            tau[i] = I * ddq_i - m * g * np.sin(q_i)
+            # Use full state for both joints
+            q_i = q_sol[:, i]  # Get both joint angles
+            ddq_i = ddq_sol[:, i]  # Get both joint accelerations
+            tau[:, i] = I * ddq_i - m * g * np.sin(q_i)  # Compute torque for both joints
     return q_sol, dq_sol, ddq_sol, tau
 
 def display_motion(q_traj):
@@ -232,13 +242,10 @@ if __name__=='__main__':
     J_X_init = []
     U_init = []
     X_init_val = []
-    X_init_val_casadi = []
-    X_init_test = np.zeros(nx)
-
-    for i in range(1000):
+    for i in range(10):
         x_init = np.zeros(nx)
-        x_init[:nq] = (np.random.rand(nq) - 0.5) * 0.5  # Small initial angles
-        x_init[nq:] = (np.random.rand(nq) - 0.5) * 10.0
+        x_init[:nq] = (np.random.rand(nq) - 0.5) * 0.05  # Small initial angles
+        x_init[nq:] = (np.random.rand(nq) - 0.5) * 0.05
         sol, X, U, J_opt = create_and_solve_ocp(
             N, nx, nq, dt, x_init,
             log_w_p, 10**log_w_v, 10**log_w_a, 10**log_w_final, None, None)
@@ -249,7 +256,6 @@ if __name__=='__main__':
         
         J_X_init.append(torch.tensor([J_opt], dtype=torch.float32))
         X_init_val.append(torch.tensor([x_init], dtype=torch.float32))
-        X_init_val_casadi.append(x_init)
         U_init.append(np.array([sol.value(U[k]) for k in range(N)]).T)  # Shape: (nu, N)
 
     # Convert data to PyTorch tensors
@@ -260,8 +266,8 @@ if __name__=='__main__':
    
     # Initialize neural network with input size matching state dimension
 
-    net = NeuralNetwork(input_size=4, hidden_size=64, output_size=2).to(device)
-    optimizer = optim.Adam(net.parameters(), lr=0.1)
+    net = NeuralNetwork(input_size=4, hidden_size=128, output_size=1).to(device)
+    optimizer = optim.Adam(net.parameters(), lr=0.01)
     print("input tensor shape hi", x_init)
 
     loss_fn = nn.MSELoss()
@@ -274,7 +280,7 @@ if __name__=='__main__':
 
 
     # Training loop
-    for i in range(1,999):
+    for i in range(10):
         # Zero the parameter gradients
         optimizer.zero_grad()
         print("input tensor shape", X_init_val[i])
@@ -284,10 +290,12 @@ if __name__=='__main__':
         target = J_X_init[i].to(device)
 
         J_pred = J_pred.to(device)
+        J_pred = J_pred.squeeze(0)
         print("J_pred shape", J_pred.shape)
         print("target shape", target.shape)
         print("J_pred.requires_grad:", J_pred.requires_grad)
         print("loss_fn input shapes:", J_pred.shape, target.shape)
+       
         # Calculate loss
         loss = loss_fn(J_pred, target)
         # Backward pass and optimize
@@ -301,205 +309,144 @@ if __name__=='__main__':
     # After training, get the terminal cost prediction
     with torch.no_grad():
         #X_init_tensor = torch.tensor(X_init, dtype=torch.float32).unsqueeze(0)  # Add batch dimension
-        nn_func = net.create_casadi_function("NeuralNetwork", "./final_project/", 4, True)
-        J_terminal = []
-        Jterm_test = []
-        for i in range(999, 1000):
-            print("input shape", X_init_val_casadi[i])
-            Jterm = nn_func(X_init_val_casadi[i])
-            x_init_test = X_init_val_casadi[i]
-            #if i==999:
-            Jterm_test = Jterm
-            J_terminal.append(Jterm)  # Convert to Python scalar
-            print(f"Final predicted terminal cost: {Jterm_test}")
+        nn_func = net.create_casadi_function("NeuralNetwork", "./final_project/", 4, True)   
+        print(f"Final predicted terminal cost: {nn_func}")
 
 
-    '''N = 500
+
+    M = 100
+    #Jterm_test = 1
+    x_init_test = np.zeros(nx)
+    x_init_test[:nq] = (np.random.rand(nq) - 0.5) * 0.05  # Small initial angles
+    x_init_test[nq:] = (np.random.rand(nq) - 0.5) * 0.05 
     sol, X, U, J = create_and_solve_ocp(
-        N, nx, nq, dt, x_init,
+        N, nx, nq, dt, x_init_test,
+        log_w_p, 10**log_w_v, 10**log_w_a, 10**log_w_final, None, M)
+    q_sol, dq_sol, ddq_sol, tau = extract_solution(sol, X, U, M)
+    # Print optimization results
+    print("Optimization completed successfully!")
+    print(f"Final cost: {J}")
+    print(f"Initial state: {x_init_test}")
+    print(f"Final state: {np.concatenate([q_sol[:, -1], dq_sol[:, -1]])}")
+    
+    # Display the motion
+    #print("Displaying robot motion...")
+    #display_motion(q_sol)
+
+    # Plot results
+    tt = np.linspace(0, (M + 1) * dt, M + 1)
+    
+    # Create a figure with subplots
+    fig, (ax1, ax2, ax3) = plt.subplots(3, 1, figsize=(12, 12))
+    
+    # Plot joint positions
+    for i in range(nq):
+        ax1.plot(tt, q_sol[i, :].T, label=f'q {i+1}', alpha=0.7)
+    ax1.set_xlabel('Time [s]')
+    ax1.set_ylabel('Position [rad]')
+    ax1.legend()
+    ax1.grid(True)
+    ax1.set_title('Joint Positions')
+
+    # Plot joint velocities
+    for i in range(nq):
+        ax2.plot(tt, dq_sol[i, :].T, label=f'dq {i+1}', alpha=0.7)
+    ax2.set_xlabel('Time [s]')
+    ax2.set_ylabel('Velocity [rad/s]')
+    ax2.legend()
+    ax2.grid(True)
+    ax2.set_title('Joint Velocities')
+
+    # Plot joint torques (one time step shorter)
+    tt_tau = tt[:-1]
+    for i in range(nq):
+        ax3.plot(tt_tau, tau[i, :], label=f'τ {i+1}', alpha=0.7)
+    ax3.set_xlabel('Time [s]')
+    ax3.set_ylabel('Torque [Nm]')
+    ax3.legend()
+    ax3.grid(True)
+    ax3.set_title('Joint Torques')
+
+    plt.tight_layout()
+    plt.show()
+
+
+
+    sol, X, U, J = create_and_solve_ocp(
+        N, nx, nq, dt, x_init_test,
+        log_w_p, 10**log_w_v, 10**log_w_a, 10**log_w_final, nn_func, M)
+
+    q_sol, dq_sol, ddq_sol, tau = extract_solution(sol, X, U, M)
+
+
+    # Print optimization results
+    print("Optimization completed successfully!")
+    print(f"Final cost: {J}")
+    print(f"Initial state: {x_init_test}")
+    print(f"Final state: {np.concatenate([q_sol[:, -1], dq_sol[:, -1]])}")
+    
+    # Display the motion
+    #print("Displaying robot motion...")
+    #display_motion(q_sol)
+
+    # Plot results
+    tt = np.linspace(0, (M + 1) * dt, M + 1)
+    
+    # Create a figure with subplots
+    fig, (ax1, ax2, ax3) = plt.subplots(3, 1, figsize=(12, 12))
+    
+    # Plot joint positions
+    for i in range(nq):
+        ax1.plot(tt, q_sol[i, :].T, label=f'q {i+1}', alpha=0.7)
+    ax1.set_xlabel('Time [s]')
+    ax1.set_ylabel('Position [rad]')
+    ax1.legend()
+    ax1.grid(True)
+    ax1.set_title('Joint Positions')
+
+    # Plot joint velocities
+    for i in range(nq):
+        ax2.plot(tt, dq_sol[i, :].T, label=f'dq {i+1}', alpha=0.7)
+    ax2.set_xlabel('Time [s]')
+    ax2.set_ylabel('Velocity [rad/s]')
+    ax2.legend()
+    ax2.grid(True)
+    ax2.set_title('Joint Velocities')
+
+    # Plot joint torques (one time step shorter)
+    tt_tau = tt[:-1]
+    for i in range(nq):
+        ax3.plot(tt_tau, tau[i, :], label=f'τ {i+1}', alpha=0.7)
+    ax3.set_xlabel('Time [s]')
+    ax3.set_ylabel('Torque [Nm]')
+    ax3.legend()
+    ax3.grid(True)
+    ax3.set_title('Joint Torques')
+
+    plt.tight_layout()
+    plt.show()
+
+    N = N + M
+
+  
+    sol, X, U, J = create_and_solve_ocp(
+        N, nx, nq, dt, x_init_test,
         log_w_p, 10**log_w_v, 10**log_w_a, 10**log_w_final, None, None)
 
     q_sol, dq_sol, ddq_sol, tau = extract_solution(sol, X, U, None)
 
-
     # Print optimization results
     print("Optimization completed successfully!")
     print(f"Final cost: {J}")
-    print(f"Initial state: {x_init}")
+    print(f"Initial state: {x_init_test}")
     print(f"Final state: {np.concatenate([q_sol[:, -1], dq_sol[:, -1]])}")
     
     # Display the motion
-    print("Displaying robot motion...")
-    display_motion(q_sol)
+    #print("Displaying robot motion...")
+    #display_motion(q_sol)
 
     # Plot results
     tt = np.linspace(0, (N + 1) * dt, N + 1)
-    
-    # Create a figure with subplots
-    fig, (ax1, ax2, ax3) = plt.subplots(3, 1, figsize=(12, 12))
-    
-    # Plot joint positions
-    for i in range(nq):
-        ax1.plot(tt, q_sol[i, :].T, label=f'q {i+1}', alpha=0.7)
-    ax1.set_xlabel('Time [s]')
-    ax1.set_ylabel('Position [rad]')
-    ax1.legend()
-    ax1.grid(True)
-    ax1.set_title('Joint Positions')
-
-    # Plot joint velocities
-    for i in range(nq):
-        ax2.plot(tt, dq_sol[i, :].T, label=f'dq {i+1}', alpha=0.7)
-    ax2.set_xlabel('Time [s]')
-    ax2.set_ylabel('Velocity [rad/s]')
-    ax2.legend()
-    ax2.grid(True)
-    ax2.set_title('Joint Velocities')
-
-    # Plot joint torques (one time step shorter)
-    tt_tau = tt[:-1]
-    for i in range(nq):
-        ax3.plot(tt_tau, tau[i, :], label=f'τ {i+1}', alpha=0.7)
-    ax3.set_xlabel('Time [s]')
-    ax3.set_ylabel('Torque [Nm]')
-    ax3.legend()
-    ax3.grid(True)
-    ax3.set_title('Joint Torques')
-
-    plt.tight_layout()
-    plt.show()'''
-
-    M = 10
-    #Jterm_test = 1
-    '''x_init = np.zeros(nx)
-    x_init[:nq] = (np.random.rand(nq) - 0.5) * 0.5  # Small initial angles
-    x_init[nq:] = (np.random.rand(nq) - 0.5) * 10.0'''
-    sol, X, U, J = create_and_solve_ocp(
-        N, nx, nq, dt, x_init_test,
-        log_w_p, 10**log_w_v, 10**log_w_a, 10**log_w_final, None, M)
-    q_sol, dq_sol, ddq_sol, tau = extract_solution(sol, X, U, M)
-    # Print optimization results
-    print("Optimization completed successfully!")
-    print(f"Final cost: {J}")
-    print(f"Initial state: {x_init_test}")
-    print(f"Final state: {np.concatenate([q_sol[:, -1], dq_sol[:, -1]])}")
-    
-    # Display the motion
-    #print("Displaying robot motion...")
-    #display_motion(q_sol)
-
-    # Plot results
-    tt = np.linspace(0, (M + 1) * dt, M + 1)
-    
-    # Create a figure with subplots
-    fig, (ax1, ax2, ax3) = plt.subplots(3, 1, figsize=(12, 12))
-    
-    # Plot joint positions
-    for i in range(nq):
-        ax1.plot(tt, q_sol[i, :].T, label=f'q {i+1}', alpha=0.7)
-    ax1.set_xlabel('Time [s]')
-    ax1.set_ylabel('Position [rad]')
-    ax1.legend()
-    ax1.grid(True)
-    ax1.set_title('Joint Positions')
-
-    # Plot joint velocities
-    for i in range(nq):
-        ax2.plot(tt, dq_sol[i, :].T, label=f'dq {i+1}', alpha=0.7)
-    ax2.set_xlabel('Time [s]')
-    ax2.set_ylabel('Velocity [rad/s]')
-    ax2.legend()
-    ax2.grid(True)
-    ax2.set_title('Joint Velocities')
-
-    # Plot joint torques (one time step shorter)
-    tt_tau = tt[:-1]
-    for i in range(nq):
-        ax3.plot(tt_tau, tau[i, :], label=f'τ {i+1}', alpha=0.7)
-    ax3.set_xlabel('Time [s]')
-    ax3.set_ylabel('Torque [Nm]')
-    ax3.legend()
-    ax3.grid(True)
-    ax3.set_title('Joint Torques')
-
-    plt.tight_layout()
-    plt.show()
-
-
-    sol, X, U, J = create_and_solve_ocp(
-        N, nx, nq, dt, x_init_test,
-        log_w_p, 10**log_w_v, 10**log_w_a, 10**log_w_final, Jterm_test, M)
-
-    q_sol, dq_sol, ddq_sol, tau = extract_solution(sol, X, U, M)
-
-
-    # Print optimization results
-    print("Optimization completed successfully!")
-    print(f"Final cost: {J}")
-    print(f"Initial state: {x_init_test}")
-    print(f"Final state: {np.concatenate([q_sol[:, -1], dq_sol[:, -1]])}")
-    
-    # Display the motion
-    #print("Displaying robot motion...")
-    #display_motion(q_sol)
-
-    # Plot results
-    tt = np.linspace(0, (M + 1) * dt, M + 1)
-    
-    # Create a figure with subplots
-    fig, (ax1, ax2, ax3) = plt.subplots(3, 1, figsize=(12, 12))
-    
-    # Plot joint positions
-    for i in range(nq):
-        ax1.plot(tt, q_sol[i, :].T, label=f'q {i+1}', alpha=0.7)
-    ax1.set_xlabel('Time [s]')
-    ax1.set_ylabel('Position [rad]')
-    ax1.legend()
-    ax1.grid(True)
-    ax1.set_title('Joint Positions')
-
-    # Plot joint velocities
-    for i in range(nq):
-        ax2.plot(tt, dq_sol[i, :].T, label=f'dq {i+1}', alpha=0.7)
-    ax2.set_xlabel('Time [s]')
-    ax2.set_ylabel('Velocity [rad/s]')
-    ax2.legend()
-    ax2.grid(True)
-    ax2.set_title('Joint Velocities')
-
-    # Plot joint torques (one time step shorter)
-    tt_tau = tt[:-1]
-    for i in range(nq):
-        ax3.plot(tt_tau, tau[i, :], label=f'τ {i+1}', alpha=0.7)
-    ax3.set_xlabel('Time [s]')
-    ax3.set_ylabel('Torque [Nm]')
-    ax3.legend()
-    ax3.grid(True)
-    ax3.set_title('Joint Torques')
-
-    plt.tight_layout()
-    plt.show()
-
-    M = N + M
-
-    sol, X, U, J = create_and_solve_ocp(
-        N, nx, nq, dt, x_init_test,
-        log_w_p, 10**log_w_v, 10**log_w_a, 10**log_w_final, None, M)
-
-    q_sol, dq_sol, ddq_sol, tau = extract_solution(sol, X, U, M)
-
-    # Print optimization results
-    print("Optimization completed successfully!")
-    print(f"Final cost: {J}")
-    print(f"Initial state: {x_init_test}")
-    print(f"Final state: {np.concatenate([q_sol[:, -1], dq_sol[:, -1]])}")
-    
-    # Display the motion
-    #print("Displaying robot motion...")
-    #display_motion(q_sol)
-
-    # Plot results
-    tt = np.linspace(0, (M + 1) * dt, M + 1)
     
     # Create a figure with subplots
     fig, (ax1, ax2, ax3) = plt.subplots(3, 1, figsize=(12, 12))
