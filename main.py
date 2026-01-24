@@ -28,7 +28,7 @@ nx = 2 * nq
 
 dt = 0.2
 dt_N = 0.02
-N = 1000
+N = 200
 # Initial state (random but within reasonable bounds)
  # Start from rest
 q_des = np.zeros(nq)
@@ -151,7 +151,7 @@ def define_terminal_cost_and_constraints(opti, X, q_des, w_p_final, J_terminal=N
     terminal_cost = 0
     # Terminal cost from the neural network or quadratic cost
     if J_terminal is not None:
-        terminal_cost = cs.sum1(J_terminal(X[-1]))
+        terminal_cost = w_p_final * cs.sum1(J_terminal(X[-1]))
     # Add terminal constraint (optional but often useful)
     opti.subject_to(X[-1][:nq] == q_des)  # Uncomment to enforce terminal state exactly
     
@@ -185,6 +185,7 @@ def create_and_solve_ocp(N, nx, nq, dt, x_init,
     sol = opti.solve()
     J_opt = sol.value(running_cost + terminal_cost)
     print(f"Solver time: {time.time() - t0:.2f}s")
+ 
     return sol, X, U, J_opt
 
 
@@ -236,14 +237,18 @@ if __name__=='__main__':
     J_X_init = []
     U_init = []
     X_init_val = []
-    for i in range(10):
+    for i in range(100):
         x_init = np.zeros(nx)
         x_init[:nq] = (np.random.rand(nq) - 0.5) * 0.05  # Small initial angles
         x_init[nq:] = (np.random.rand(nq) - 0.5) * 0.05 
         sol, X, U, J_opt = create_and_solve_ocp(
             N, nx, nq, dt, x_init,
             log_w_p, 10**log_w_v, 10**log_w_a, 10**log_w_final, None, None)
-      
+        q_sol, dq_sol, ddq_sol, tau = extract_solution(sol, X, U)
+        print("Optimization completed successfully!")
+        print(f"Final cost: {J_opt}")
+        print(f"Initial state: {x_init}")
+        print(f"Final state: {np.concatenate([q_sol[:, -1], dq_sol[:, -1]])}")
         # Extract the solution values
         x_sol = np.array([sol.value(X[k]) for k in range(N + 1)]).T  # Shape: (nx, N+1)
         #J_val = sol.stats()['iterations']['obj']  # Get the objective value
@@ -261,7 +266,7 @@ if __name__=='__main__':
     # Initialize neural network with input size matching state dimension
 
     net = NeuralNetwork(input_size=2, hidden_size=128, output_size=1).to(device)
-    optimizer = optim.Adam(net.parameters(), lr=10e-5)
+    optimizer = optim.Adam(net.parameters(), lr=0.000000001)
     print("input tensor shape hi", x_init)
 
     loss_fn = nn.MSELoss()
@@ -274,7 +279,7 @@ if __name__=='__main__':
 
 
     # Training loop
-    for i in range(10):
+    for i in range(100):
         # Zero the parameter gradients
         optimizer.zero_grad()
         print("input tensor shape", X_init_val[i])
@@ -308,11 +313,12 @@ if __name__=='__main__':
 
 
 
-    M = 100
+    M = 5
     #Jterm_test = 1
     x_init_test = np.zeros(nx)
     x_init_test[:nq] = (np.random.rand(nq) - 0.5) * 0.05  # Small initial angles
     x_init_test[nq:] = (np.random.rand(nq) - 0.5) * 0.05
+    log_w_final = 5
     sol, X, U, J = create_and_solve_ocp(
         N, nx, nq, dt, x_init_test,
         log_w_p, 10**log_w_v, 10**log_w_a, 10**log_w_final, None, M)
@@ -384,14 +390,14 @@ if __name__=='__main__':
     #display_motion(q_sol)
 
     # Plot results
-    tt = np.linspace(0, (M + 1) * dt, M + 1)
+    tt = np.linspace(0, (M + 1) * 10, M + 1)
     
     # Create a figure with subplots
     fig, (ax1, ax2, ax3) = plt.subplots(3, 1, figsize=(12, 12))
     
     # Plot joint positions
     for i in range(nq):
-        ax1.plot(tt, q_sol[i, :].T, label=f'q {i+1}', alpha=0.7)
+        ax1.plot(tt, q_sol[i, :], label=f'q {i+1}', alpha=0.7)
     ax1.set_xlabel('Time [s]')
     ax1.set_ylabel('Position [rad]')
     ax1.legend()
