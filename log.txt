@@ -6,1205 +6,1205 @@ This program contains Ipopt, a library for large-scale nonlinear optimization.
          For more information visit http://projects.coin-or.org/Ipopt
 ******************************************************************************
 
-Solver time: 0.18s
+Solver time: 0.19s
 Optimization completed successfully!
-Final cost: 9.808689950748881e-05
-Initial state: [-0.004 -0.   ]
-Final state: [ 0. -0.]
+Final cost: 0.0007002308551874863
+Initial state: [0.004 0.018]
+Final state: [0. 0.]
 terminal cost 0
-Solver time: 0.18s
+Solver time: 0.19s
 Optimization completed successfully!
-Final cost: 0.003788334954142759
-Initial state: [-0.018 -0.022]
-Final state: [ 0. -0.]
-terminal cost 0
-Solver time: 0.18s
-Optimization completed successfully!
-Final cost: 0.0009554661326261383
-Initial state: [0.009 0.012]
+Final cost: 0.00027933124491648636
+Initial state: [0.001 0.014]
 Final state: [0. 0.]
 terminal cost 0
 Solver time: 0.18s
 Optimization completed successfully!
-Final cost: 0.0004355857005897485
-Initial state: [-0.002  0.024]
-Final state: [0. 0.]
-terminal cost 0
-Solver time: 0.18s
-Optimization completed successfully!
-Final cost: 0.00024919050429917126
-Initial state: [-0.002  0.019]
-Final state: [0. 0.]
-terminal cost 0
-Solver time: 0.18s
-Optimization completed successfully!
-Final cost: 0.0033246457223257593
-Initial state: [-0.021 -0.012]
+Final cost: 0.00010570123210849994
+Initial state: [-0.006  0.002]
 Final state: [ 0. -0.]
 terminal cost 0
 Solver time: 0.18s
 Optimization completed successfully!
-Final cost: 0.0005558359745604558
-Initial state: [ 0.019 -0.02 ]
-Final state: [0. 0.]
-terminal cost 0
-Solver time: 0.18s
-Optimization completed successfully!
-Final cost: 0.0008014462998852162
-Initial state: [-0.008 -0.01 ]
-Final state: [ 0. -0.]
-terminal cost 0
-Solver time: 0.18s
-Optimization completed successfully!
-Final cost: 0.000799115457417633
-Initial state: [-0.01  -0.006]
-Final state: [ 0. -0.]
-terminal cost 0
-Solver time: 0.18s
-Optimization completed successfully!
-Final cost: 9.030850775853842e-05
-Initial state: [-0.004 -0.001]
+Final cost: 0.00012399907325013818
+Initial state: [ 0.011 -0.016]
 Final state: [ 0. -0.]
 terminal cost 0
 Solver time: 0.19s
 Optimization completed successfully!
-Final cost: 0.0004525809391438496
-Initial state: [-0.018  0.021]
-Final state: [ 0. -0.]
-terminal cost 0
-Solver time: 0.18s
-Optimization completed successfully!
-Final cost: 0.000255489494723334
-Initial state: [-0.002 -0.012]
-Final state: [ 0. -0.]
-terminal cost 0
-Solver time: 0.18s
-Optimization completed successfully!
-Final cost: 0.00048224043481201164
-Initial state: [-0.013  0.006]
-Final state: [ 0. -0.]
-terminal cost 0
-Solver time: 0.18s
-Optimization completed successfully!
-Final cost: 0.0005693617587170369
-Initial state: [-0.001 -0.02 ]
-Final state: [ 0. -0.]
-terminal cost 0
-Solver time: 0.18s
-Optimization completed successfully!
-Final cost: 0.005840477260054892
-Initial state: [-0.025 -0.023]
-Final state: [ 0. -0.]
-terminal cost 0
-Solver time: 0.18s
-Optimization completed successfully!
-Final cost: 0.001958714376393593
-Initial state: [-0.013 -0.017]
-Final state: [ 0. -0.]
-terminal cost 0
-Solver time: 0.18s
-Optimization completed successfully!
-Final cost: 0.00012062462024972768
-Initial state: [ 0.009 -0.01 ]
+Final cost: 0.002474942063224901
+Initial state: [0.02  0.007]
 Final state: [0. 0.]
 terminal cost 0
 Solver time: 0.18s
 Optimization completed successfully!
-Final cost: 0.00015782741026221974
-Initial state: [ 0.01  -0.011]
+Final cost: 0.0006795845526650509
+Initial state: [0.002 0.021]
 Final state: [0. 0.]
 terminal cost 0
 Solver time: 0.18s
 Optimization completed successfully!
-Final cost: 0.00032267246240716326
-Initial state: [ 0.016 -0.019]
+Final cost: 0.0020334475434497477
+Initial state: [0.018 0.006]
+Final state: [0. 0.]
+terminal cost 0
+Solver time: 0.19s
+Optimization completed successfully!
+Final cost: 0.00034624579599966767
+Initial state: [-0.017  0.021]
+Final state: [ 0. -0.]
+terminal cost 0
+Solver time: 0.18s
+Optimization completed successfully!
+Final cost: 0.0001240933692350396
+Initial state: [ 0.002 -0.014]
+Final state: [ 0. -0.]
+terminal cost 0
+Solver time: 0.18s
+Optimization completed successfully!
+Final cost: 0.0015553464670275633
+Initial state: [-0.021  0.008]
+Final state: [ 0. -0.]
+terminal cost 0
+Solver time: 0.18s
+Optimization completed successfully!
+Final cost: 0.005872088058963966
+Initial state: [-0.024 -0.025]
+Final state: [ 0. -0.]
+terminal cost 0
+Solver time: 0.18s
+Optimization completed successfully!
+Final cost: 0.003152036904122974
+Initial state: [0.017 0.018]
 Final state: [0. 0.]
 terminal cost 0
 Solver time: 0.18s
 Optimization completed successfully!
-Final cost: 0.0006627768934377026
-Initial state: [ 0.02 -0.02]
+Final cost: 0.003702634226064404
+Initial state: [0.021 0.014]
 Final state: [0. 0.]
 terminal cost 0
 Solver time: 0.18s
 Optimization completed successfully!
-Final cost: 0.0003148274981088446
-Initial state: [ 0.012 -0.009]
+Final cost: 0.00214832027607811
+Initial state: [0.013 0.019]
+Final state: [0. 0.]
+terminal cost 0
+Solver time: 0.19s
+Optimization completed successfully!
+Final cost: 0.0002497781348397603
+Initial state: [-0.015  0.021]
 Final state: [0. 0.]
 terminal cost 0
 Solver time: 0.18s
 Optimization completed successfully!
-Final cost: 0.0005815379654054698
-Initial state: [0.002 0.019]
+Final cost: 0.0006632742007052029
+Initial state: [ 0.018 -0.015]
 Final state: [0. 0.]
 terminal cost 0
 Solver time: 0.18s
 Optimization completed successfully!
-Final cost: 0.0010074512474740152
-Initial state: [-0.023  0.02 ]
-Final state: [ 0. -0.]
-terminal cost 0
-Solver time: 0.18s
-Optimization completed successfully!
-Final cost: 0.0004632834847137401
-Initial state: [-0.013  0.007]
-Final state: [ 0. -0.]
-terminal cost 0
-Solver time: 0.18s
-Optimization completed successfully!
-Final cost: 0.003613297829153693
-Initial state: [-0.021 -0.013]
-Final state: [ 0. -0.]
-terminal cost 0
-Solver time: 0.18s
-Optimization completed successfully!
-Final cost: 0.0003897651711177968
-Initial state: [0.006 0.006]
+Final cost: 0.0004710781345152855
+Initial state: [ 0.016 -0.016]
 Final state: [0. 0.]
 terminal cost 0
 Solver time: 0.18s
 Optimization completed successfully!
-Final cost: 0.00046238419947133483
-Initial state: [-0.019  0.022]
+Final cost: 0.00027776483313758795
+Initial state: [-0.003 -0.01 ]
 Final state: [ 0. -0.]
 terminal cost 0
 Solver time: 0.18s
 Optimization completed successfully!
-Final cost: 0.0021335015521509967
-Initial state: [0.012 0.02 ]
+Final cost: 0.003336410456985752
+Initial state: [-0.02  -0.014]
+Final state: [ 0. -0.]
+terminal cost 0
+Solver time: 0.18s
+Optimization completed successfully!
+Final cost: 0.0012804748077240207
+Initial state: [-0.013 -0.008]
+Final state: [ 0. -0.]
+terminal cost 0
+Solver time: 0.18s
+Optimization completed successfully!
+Final cost: 0.0026771168000317776
+Initial state: [-0.018 -0.012]
+Final state: [ 0. -0.]
+terminal cost 0
+Solver time: 0.21s
+Optimization completed successfully!
+Final cost: 0.0007451539992271056
+Initial state: [ 0.016 -0.009]
+Final state: [0. 0.]
+terminal cost 0
+Solver time: 0.19s
+Optimization completed successfully!
+Final cost: 0.0025919374645762146
+Initial state: [0.016 0.017]
 Final state: [0. 0.]
 terminal cost 0
 Solver time: 0.18s
 Optimization completed successfully!
-Final cost: 0.0022020038851114543
-Initial state: [-0.018 -0.007]
+Final cost: 0.0013179573957310953
+Initial state: [-0.018  0.004]
 Final state: [ 0. -0.]
 terminal cost 0
 Solver time: 0.18s
 Optimization completed successfully!
-Final cost: 0.0008321056958176761
-Initial state: [0.012 0.003]
+Final cost: 0.0030057849694424526
+Initial state: [-0.023 -0.005]
+Final state: [ 0. -0.]
+terminal cost 0
+Solver time: 0.18s
+Optimization completed successfully!
+Final cost: 0.0012261591315641251
+Initial state: [-0.021  0.012]
+Final state: [ 0. -0.]
+terminal cost 0
+Solver time: 0.18s
+Optimization completed successfully!
+Final cost: 2.6122576210074742e-05
+Initial state: [-0.002 -0.001]
+Final state: [ 0. -0.]
+terminal cost 0
+Solver time: 0.18s
+Optimization completed successfully!
+Final cost: 0.0002416787405167256
+Initial state: [-0.014  0.018]
+Final state: [ 0. -0.]
+terminal cost 0
+Solver time: 0.18s
+Optimization completed successfully!
+Final cost: 0.00013818156938812776
+Initial state: [ 0.007 -0.005]
 Final state: [0. 0.]
 terminal cost 0
 Solver time: 0.18s
 Optimization completed successfully!
-Final cost: 0.0028013741823392116
-Initial state: [-0.019 -0.011]
-Final state: [ 0. -0.]
+Final cost: 0.0002678095250078364
+Initial state: [-0.001  0.018]
+Final state: [0. 0.]
 terminal cost 0
-Solver time: 0.18s
+Solver time: 0.19s
 Optimization completed successfully!
-Final cost: 0.00012622567678347585
-Initial state: [-0.004 -0.001]
-Final state: [ 0. -0.]
-terminal cost 0
-Solver time: 0.18s
-Optimization completed successfully!
-Final cost: 0.0031281992156483958
-Initial state: [0.018 0.017]
+Final cost: 0.00017202848682985297
+Initial state: [-0.002  0.017]
 Final state: [0. 0.]
 terminal cost 0
 Solver time: 0.18s
 Optimization completed successfully!
-Final cost: 0.00031494736650941135
-Initial state: [-0.001 -0.016]
+Final cost: 4.669669379213294e-05
+Initial state: [ 0.008 -0.017]
 Final state: [ 0. -0.]
 terminal cost 0
 Solver time: 0.18s
 Optimization completed successfully!
-Final cost: 0.0007773067883921044
-Initial state: [-0.023  0.024]
+Final cost: 3.9224101858080566e-05
+Initial state: [ 0.005 -0.015]
 Final state: [ 0. -0.]
 terminal cost 0
 Solver time: 0.18s
 Optimization completed successfully!
-Final cost: 0.0006805977071575777
-Initial state: [ 0.017 -0.012]
+Final cost: 0.0006790917108486669
+Initial state: [ 0.021 -0.023]
 Final state: [0. 0.]
 terminal cost 0
 Solver time: 0.18s
 Optimization completed successfully!
-Final cost: 0.001676755520196277
-Initial state: [0.014 0.011]
+Final cost: 0.00025503409141035445
+Initial state: [-0.016  0.022]
 Final state: [0. 0.]
 terminal cost 0
 Solver time: 0.18s
 Optimization completed successfully!
-Final cost: 0.0035062281470141384
-Initial state: [0.023 0.009]
+Final cost: 0.0005968403204894787
+Initial state: [-0.011 -0.001]
+Final state: [ 0. -0.]
+terminal cost 0
+Solver time: 0.18s
+Optimization completed successfully!
+Final cost: 0.00017304495141790338
+Initial state: [ 0.008 -0.004]
 Final state: [0. 0.]
 terminal cost 0
 Solver time: 0.18s
 Optimization completed successfully!
-Final cost: 6.74901665728894e-05
-Initial state: [-0.006  0.005]
+Final cost: 0.0025967066431717544
+Initial state: [-0.015 -0.018]
 Final state: [ 0. -0.]
 terminal cost 0
 Solver time: 0.18s
 Optimization completed successfully!
-Final cost: 3.886952815746916e-05
-Initial state: [0.001 0.003]
+Final cost: 0.0032998224488957817
+Initial state: [0.018 0.019]
 Final state: [0. 0.]
 terminal cost 0
 Solver time: 0.18s
 Optimization completed successfully!
-Final cost: 0.002098632859253339
-Initial state: [0.014 0.014]
+Final cost: 5.595314331276222e-05
+Initial state: [ 0.009 -0.018]
+Final state: [ 0. -0.]
+terminal cost 0
+Solver time: 0.18s
+Optimization completed successfully!
+Final cost: 0.0006758303944435892
+Initial state: [0.006 0.012]
 Final state: [0. 0.]
 terminal cost 0
 Solver time: 0.18s
 Optimization completed successfully!
-Final cost: 0.00048349410103500816
-Initial state: [-0.018  0.019]
-Final state: [ 0. -0.]
-terminal cost 0
-Solver time: 0.18s
-Optimization completed successfully!
-Final cost: 0.0003492054968932534
-Initial state: [ 0.    -0.019]
-Final state: [ 0. -0.]
-terminal cost 0
-Solver time: 0.18s
-Optimization completed successfully!
-Final cost: 0.0014888564315663094
-Initial state: [0.018 0.   ]
+Final cost: 8.963285588321436e-05
+Initial state: [-0.012  0.023]
 Final state: [0. 0.]
 terminal cost 0
 Solver time: 0.18s
 Optimization completed successfully!
-Final cost: 0.0018131840690239107
-Initial state: [0.018 0.004]
+Final cost: 1.601443395445424e-05
+Initial state: [-0.005  0.01 ]
 Final state: [0. 0.]
 terminal cost 0
 Solver time: 0.18s
 Optimization completed successfully!
-Final cost: 0.0004128801207585766
-Initial state: [-0.015  0.013]
-Final state: [ 0. -0.]
-terminal cost 0
-Solver time: 0.18s
-Optimization completed successfully!
-Final cost: 0.001594982425833425
-Initial state: [0.015 0.008]
+Final cost: 9.37031525337472e-05
+Initial state: [-0.01   0.016]
 Final state: [0. 0.]
 terminal cost 0
 Solver time: 0.18s
 Optimization completed successfully!
-Final cost: 0.004647373543781484
-Initial state: [0.021 0.023]
+Final cost: 0.0017394717459308057
+Initial state: [0.015 0.01 ]
 Final state: [0. 0.]
 terminal cost 0
 Solver time: 0.18s
 Optimization completed successfully!
-Final cost: 0.0012483933163122236
-Initial state: [-0.025  0.02 ]
-Final state: [ 0. -0.]
-terminal cost 0
-Solver time: 0.18s
-Optimization completed successfully!
-Final cost: 0.001081495973666198
-Initial state: [-0.017  0.004]
-Final state: [ 0. -0.]
-terminal cost 0
-Solver time: 0.18s
-Optimization completed successfully!
-Final cost: 0.0002474034970989346
-Initial state: [-0.007  0.   ]
-Final state: [ 0. -0.]
-terminal cost 0
-Solver time: 0.18s
-Optimization completed successfully!
-Final cost: 0.00026347301157240207
-Initial state: [-0.008  0.002]
-Final state: [ 0. -0.]
-terminal cost 0
-Solver time: 0.18s
-Optimization completed successfully!
-Final cost: 8.659695564904634e-05
-Initial state: [ 0.009 -0.012]
-Final state: [ 0. -0.]
-terminal cost 0
-Solver time: 0.18s
-Optimization completed successfully!
-Final cost: 4.3033022652302295e-06
-Initial state: [-0.     0.003]
+Final cost: 0.0010417972442158974
+Initial state: [0.014 0.002]
 Final state: [0. 0.]
 terminal cost 0
 Solver time: 0.18s
 Optimization completed successfully!
-Final cost: 0.000790481871575073
-Initial state: [-0.012 -0.002]
-Final state: [ 0. -0.]
-terminal cost 0
-Solver time: 0.18s
-Optimization completed successfully!
-Final cost: 0.002430282760353259
-Initial state: [ 0.024 -0.003]
+Final cost: 6.631783413567935e-05
+Initial state: [-0.01   0.018]
 Final state: [0. 0.]
 terminal cost 0
 Solver time: 0.18s
 Optimization completed successfully!
-Final cost: 0.002327648928538534
-Initial state: [-0.013 -0.02 ]
-Final state: [ 0. -0.]
-terminal cost 0
-Solver time: 0.18s
-Optimization completed successfully!
-Final cost: 0.000510577403950428
-Initial state: [-0.011  0.001]
-Final state: [ 0. -0.]
-terminal cost 0
-Solver time: 0.18s
-Optimization completed successfully!
-Final cost: 0.0027212207890282385
-Initial state: [-0.016 -0.018]
-Final state: [ 0. -0.]
-terminal cost 0
-Solver time: 0.18s
-Optimization completed successfully!
-Final cost: 0.0014615171234842364
-Initial state: [0.008 0.021]
+Final cost: 0.00019472359516692301
+Initial state: [ 0.012 -0.015]
 Final state: [0. 0.]
 terminal cost 0
 Solver time: 0.18s
 Optimization completed successfully!
-Final cost: 0.0017014765171106067
-Initial state: [-0.015 -0.009]
+Final cost: 0.002151489422502227
+Initial state: [-0.022  0.003]
 Final state: [ 0. -0.]
 terminal cost 0
 Solver time: 0.18s
 Optimization completed successfully!
-Final cost: 0.0013729558069994013
-Initial state: [ 0.018 -0.004]
-Final state: [0. 0.]
-terminal cost 0
-Solver time: 0.18s
-Optimization completed successfully!
-Final cost: 2.1196334615262973e-06
-Initial state: [-0.001  0.001]
+Final cost: 0.00035984046722451754
+Initial state: [-0.017  0.021]
 Final state: [ 0. -0.]
 terminal cost 0
 Solver time: 0.18s
 Optimization completed successfully!
-Final cost: 0.0018711943492213201
-Initial state: [ 0.024 -0.011]
-Final state: [0. 0.]
-terminal cost 0
-Solver time: 0.18s
-Optimization completed successfully!
-Final cost: 0.00037488216503016867
-Initial state: [-0.018  0.023]
-Final state: [ 0. -0.]
-terminal cost 0
-Solver time: 0.18s
-Optimization completed successfully!
-Final cost: 0.0013720893288939968
-Initial state: [-0.008 -0.019]
-Final state: [ 0. -0.]
-terminal cost 0
-Solver time: 0.18s
-Optimization completed successfully!
-Final cost: 1.9264996482942413e-05
-Initial state: [ 0.003 -0.002]
-Final state: [0. 0.]
-terminal cost 0
-Solver time: 0.18s
-Optimization completed successfully!
-Final cost: 0.0031856558317687983
-Initial state: [0.022 0.007]
-Final state: [0. 0.]
-terminal cost 0
-Solver time: 0.18s
-Optimization completed successfully!
-Final cost: 0.0030848036816532075
-Initial state: [-0.014 -0.025]
-Final state: [ 0. -0.]
-terminal cost 0
-Solver time: 0.18s
-Optimization completed successfully!
-Final cost: 0.000570033564529324
-Initial state: [0.004 0.015]
-Final state: [0. 0.]
-terminal cost 0
-Solver time: 0.18s
-Optimization completed successfully!
-Final cost: 0.0022566054678915697
-Initial state: [-0.013 -0.019]
-Final state: [ 0. -0.]
-terminal cost 0
-Solver time: 0.18s
-Optimization completed successfully!
-Final cost: 0.0029337985292973504
-Initial state: [-0.013 -0.025]
-Final state: [ 0. -0.]
-terminal cost 0
-Solver time: 0.18s
-Optimization completed successfully!
-Final cost: 0.0011657431572418802
-Initial state: [0.011 0.01 ]
-Final state: [0. 0.]
-terminal cost 0
-Solver time: 0.18s
-Optimization completed successfully!
-Final cost: 0.00023401758609915176
-Initial state: [-0.004  0.021]
-Final state: [0. 0.]
-terminal cost 0
-Solver time: 0.18s
-Optimization completed successfully!
-Final cost: 0.00029179298602480486
-Initial state: [-0.001 -0.015]
-Final state: [ 0. -0.]
-terminal cost 0
-Solver time: 0.18s
-Optimization completed successfully!
-Final cost: 0.00045364322390022767
-Initial state: [ 0.018 -0.019]
-Final state: [0. 0.]
-terminal cost 0
-Solver time: 0.18s
-Optimization completed successfully!
-Final cost: 8.736699096931318e-06
-Initial state: [-0.001  0.004]
-Final state: [0. 0.]
-terminal cost 0
-Solver time: 0.18s
-Optimization completed successfully!
-Final cost: 3.3090434393711496e-07
-Initial state: [ 0. -0.]
-Final state: [0. 0.]
-terminal cost 0
-Solver time: 0.18s
-Optimization completed successfully!
-Final cost: 0.000841088777662777
-Initial state: [-0.012 -0.003]
-Final state: [ 0. -0.]
-terminal cost 0
-Solver time: 0.18s
-Optimization completed successfully!
-Final cost: 0.0001879672721704476
+Final cost: 0.00020427414300651757
 Initial state: [ 0.014 -0.02 ]
 Final state: [ 0. -0.]
 terminal cost 0
 Solver time: 0.18s
 Optimization completed successfully!
-Final cost: 0.0018009808495076367
-Initial state: [-0.021  0.003]
+Final cost: 0.000349498193275383
+Initial state: [-0.016  0.017]
 Final state: [ 0. -0.]
 terminal cost 0
 Solver time: 0.18s
 Optimization completed successfully!
-Final cost: 0.0003117991953906709
-Initial state: [ 0.002 -0.021]
-Final state: [ 0. -0.]
-terminal cost 0
-Solver time: 0.18s
-Optimization completed successfully!
-Final cost: 0.00039725738393359345
-Initial state: [ 0.016 -0.017]
+Final cost: 0.001883762530630742
+Initial state: [0.011 0.02 ]
 Final state: [0. 0.]
 terminal cost 0
 Solver time: 0.18s
 Optimization completed successfully!
-Final cost: 0.00011733376586879104
-Initial state: [-0.009  0.01 ]
-Final state: [ 0. -0.]
-terminal cost 0
-Solver time: 0.18s
-Optimization completed successfully!
-Final cost: 5.673976461356857e-05
-Initial state: [-0.003  0.013]
+Final cost: 0.00041720231142312604
+Initial state: [0.007 0.004]
 Final state: [0. 0.]
 terminal cost 0
 Solver time: 0.18s
 Optimization completed successfully!
-Final cost: 0.0012125134248741876
-Initial state: [-0.011 -0.01 ]
-Final state: [ 0. -0.]
-terminal cost 0
-Solver time: 0.18s
-Optimization completed successfully!
-Final cost: 0.0007746004078198994
-Initial state: [ 0.016 -0.008]
+Final cost: 0.00028217189518598123
+Initial state: [0.007 0.001]
 Final state: [0. 0.]
 terminal cost 0
 Solver time: 0.18s
 Optimization completed successfully!
-Final cost: 0.00018889222397757435
-Initial state: [0.    0.012]
+Final cost: 0.00011634442869846678
+Initial state: [ 0.007 -0.023]
+Final state: [ 0. -0.]
+terminal cost 0
+Solver time: 0.18s
+Optimization completed successfully!
+Final cost: 0.0008057838894092111
+Initial state: [ 0.014 -0.002]
 Final state: [0. 0.]
 terminal cost 0
 Solver time: 0.18s
 Optimization completed successfully!
-Final cost: 4.4344354012412376e-05
-Initial state: [-0.002  0.01 ]
+Final cost: 0.0019008360047116674
+Initial state: [0.01  0.022]
 Final state: [0. 0.]
 terminal cost 0
 Solver time: 0.18s
 Optimization completed successfully!
-Final cost: 0.004404997001918472
-Initial state: [-0.021 -0.02 ]
+Final cost: 0.0022212289137838247
+Initial state: [-0.015 -0.015]
 Final state: [ 0. -0.]
 terminal cost 0
 Solver time: 0.18s
 Optimization completed successfully!
-Final cost: 3.5236969275218106e-06
-Initial state: [ 0.002 -0.004]
+Final cost: 1.1074203800632653e-05
+Initial state: [ 0.003 -0.005]
 Final state: [ 0. -0.]
 terminal cost 0
 Solver time: 0.18s
 Optimization completed successfully!
-Final cost: 0.0008073092908423384
-Initial state: [-0.016  0.006]
+Final cost: 0.003939014838082597
+Initial state: [-0.024 -0.01 ]
 Final state: [ 0. -0.]
 terminal cost 0
 Solver time: 0.18s
 Optimization completed successfully!
-Final cost: 0.001668737360053472
-Initial state: [-0.018 -0.002]
-Final state: [ 0. -0.]
-terminal cost 0
-Solver time: 0.18s
-Optimization completed successfully!
-Final cost: 0.0015315605188952802
-Initial state: [-0.014 -0.009]
-Final state: [ 0. -0.]
-terminal cost 0
-Solver time: 0.18s
-Optimization completed successfully!
-Final cost: 0.0008486517046939205
-Initial state: [-0.022  0.022]
-Final state: [ 0. -0.]
-terminal cost 0
-Solver time: 0.18s
-Optimization completed successfully!
-Final cost: 0.004308183944784245
-Initial state: [-0.019 -0.024]
-Final state: [ 0. -0.]
-terminal cost 0
-Solver time: 0.18s
-Optimization completed successfully!
-Final cost: 0.002978085421962292
-Initial state: [-0.024 -0.003]
-Final state: [ 0. -0.]
-terminal cost 0
-Solver time: 0.18s
-Optimization completed successfully!
-Final cost: 0.00014111244097311722
-Initial state: [-0.012  0.018]
+Final cost: 0.0016905208950447768
+Initial state: [0.019 0.   ]
 Final state: [0. 0.]
 terminal cost 0
 Solver time: 0.18s
 Optimization completed successfully!
-Final cost: 0.0019063747179849772
-Initial state: [0.016 0.01 ]
+Final cost: 0.0007416124211119851
+Initial state: [0.009 0.007]
 Final state: [0. 0.]
 terminal cost 0
 Solver time: 0.18s
 Optimization completed successfully!
-Final cost: 0.00018322737279791035
-Initial state: [-0.009  0.005]
+Final cost: 6.646872635599633e-05
+Initial state: [-0.007  0.019]
+Final state: [0. 0.]
+terminal cost 0
+Solver time: 0.18s
+Optimization completed successfully!
+Final cost: 1.76606068984287e-05
+Initial state: [-0.004  0.01 ]
+Final state: [0. 0.]
+terminal cost 0
+Solver time: 0.18s
+Optimization completed successfully!
+Final cost: 0.004336958738976601
+Initial state: [-0.021 -0.019]
 Final state: [ 0. -0.]
-Average Optimized Cost on Running MPC 0.0011871536393296177
-input tensor shape hi [-0.009  0.005]
+terminal cost 0
+Solver time: 0.18s
+Optimization completed successfully!
+Final cost: 0.00015958547221460182
+Initial state: [-0.014  0.024]
+Final state: [0. 0.]
+terminal cost 0
+Solver time: 0.18s
+Optimization completed successfully!
+Final cost: 0.0014628278459212468
+Initial state: [-0.008 -0.02 ]
+Final state: [ 0. -0.]
+terminal cost 0
+Solver time: 0.18s
+Optimization completed successfully!
+Final cost: 5.496626504241701e-05
+Initial state: [ 0.008 -0.012]
+Final state: [ 0. -0.]
+terminal cost 0
+Solver time: 0.18s
+Optimization completed successfully!
+Final cost: 0.002191150221547385
+Initial state: [-0.018 -0.007]
+Final state: [ 0. -0.]
+terminal cost 0
+Solver time: 0.18s
+Optimization completed successfully!
+Final cost: 0.002173955512447335
+Initial state: [-0.023  0.003]
+Final state: [ 0. -0.]
+terminal cost 0
+Solver time: 0.18s
+Optimization completed successfully!
+Final cost: 0.0003642055172592445
+Initial state: [-0.016  0.018]
+Final state: [ 0. -0.]
+terminal cost 0
+Solver time: 0.18s
+Optimization completed successfully!
+Final cost: 8.220706582498181e-05
+Initial state: [ 0.009 -0.023]
+Final state: [ 0. -0.]
+terminal cost 0
+Solver time: 0.18s
+Optimization completed successfully!
+Final cost: 0.0008622240340452762
+Initial state: [-0.005 -0.017]
+Final state: [ 0. -0.]
+terminal cost 0
+Solver time: 0.18s
+Optimization completed successfully!
+Final cost: 0.0012953624140226837
+Initial state: [-0.01  -0.014]
+Final state: [ 0. -0.]
+terminal cost 0
+Solver time: 0.18s
+Optimization completed successfully!
+Final cost: 0.0030171346365235946
+Initial state: [0.016 0.02 ]
+Final state: [0. 0.]
+terminal cost 0
+Solver time: 0.18s
+Optimization completed successfully!
+Final cost: 0.0012943099759643126
+Initial state: [ 0.022 -0.012]
+Final state: [0. 0.]
+terminal cost 0
+Solver time: 0.18s
+Optimization completed successfully!
+Final cost: 0.005540185745618931
+Initial state: [0.023 0.023]
+Final state: [0. 0.]
+terminal cost 0
+Solver time: 0.18s
+Optimization completed successfully!
+Final cost: 0.0012233039145295177
+Initial state: [ 0.018 -0.004]
+Final state: [0. 0.]
+terminal cost 0
+Solver time: 0.18s
+Optimization completed successfully!
+Final cost: 0.0029311916989061813
+Initial state: [-0.022 -0.005]
+Final state: [ 0. -0.]
+terminal cost 0
+Solver time: 0.18s
+Optimization completed successfully!
+Final cost: 0.00465766536286376
+Initial state: [-0.024 -0.017]
+Final state: [ 0. -0.]
+terminal cost 0
+Solver time: 0.18s
+Optimization completed successfully!
+Final cost: 0.0019111775998526164
+Initial state: [-0.015 -0.012]
+Final state: [ 0. -0.]
+terminal cost 0
+Solver time: 0.18s
+Optimization completed successfully!
+Final cost: 5.22672611947327e-05
+Initial state: [ 0.008 -0.013]
+Final state: [ 0. -0.]
+terminal cost 0
+Solver time: 0.18s
+Optimization completed successfully!
+Final cost: 0.001836178806394744
+Initial state: [-0.019 -0.002]
+Final state: [ 0. -0.]
+terminal cost 0
+Solver time: 0.18s
+Optimization completed successfully!
+Final cost: 0.0024231823488206337
+Initial state: [-0.02  -0.005]
+Final state: [ 0. -0.]
+terminal cost 0
+Solver time: 0.18s
+Optimization completed successfully!
+Final cost: 0.0010074900193500417
+Initial state: [ 0.021 -0.016]
+Final state: [0. 0.]
+terminal cost 0
+Solver time: 0.18s
+Optimization completed successfully!
+Final cost: 0.0032238954434818156
+Initial state: [0.017 0.019]
+Final state: [0. 0.]
+terminal cost 0
+Solver time: 0.18s
+Optimization completed successfully!
+Final cost: 0.00015615016182769515
+Initial state: [-0.004  0.019]
+Final state: [0. 0.]
+terminal cost 0
+Solver time: 0.18s
+Optimization completed successfully!
+Final cost: 0.00013646809245551524
+Initial state: [-0.014  0.024]
+Final state: [0. 0.]
+terminal cost 0
+Solver time: 0.18s
+Optimization completed successfully!
+Final cost: 0.0004509778549943893
+Initial state: [ 0.015 -0.013]
+Final state: [0. 0.]
+terminal cost 0
+Solver time: 0.18s
+Optimization completed successfully!
+Final cost: 2.623105182660639e-05
+Initial state: [ 0.006 -0.013]
+Final state: [ 0. -0.]
+terminal cost 0
+Solver time: 0.18s
+Optimization completed successfully!
+Final cost: 0.000339562431280952
+Initial state: [ 0.013 -0.01 ]
+Final state: [0. 0.]
+terminal cost 0
+Solver time: 0.18s
+Optimization completed successfully!
+Final cost: 0.00023398937885780777
+Initial state: [-0.008  0.003]
+Final state: [ 0. -0.]
+terminal cost 0
+Solver time: 0.18s
+Optimization completed successfully!
+Final cost: 0.0008466799412347568
+Initial state: [0.011 0.005]
+Final state: [0. 0.]
+terminal cost 0
+Solver time: 0.18s
+Optimization completed successfully!
+Final cost: 0.0007521614504807351
+Initial state: [0.009 0.007]
+Final state: [0. 0.]
+terminal cost 0
+Solver time: 0.18s
+Optimization completed successfully!
+Final cost: 0.002651292339875593
+Initial state: [-0.015 -0.018]
+Final state: [ 0. -0.]
+terminal cost 0
+Solver time: 0.18s
+Optimization completed successfully!
+Final cost: 0.0017748297418559947
+Initial state: [0.017 0.004]
+Final state: [0. 0.]
+terminal cost 0
+Solver time: 0.18s
+Optimization completed successfully!
+Final cost: 8.923726420570727e-05
+Initial state: [ 0.008 -0.022]
+Final state: [ 0. -0.]
+terminal cost 0
+Solver time: 0.18s
+Optimization completed successfully!
+Final cost: 0.003406210501248007
+Initial state: [0.022 0.011]
+Final state: [0. 0.]
+terminal cost 0
+Solver time: 0.18s
+Optimization completed successfully!
+Final cost: 0.0006539523568663066
+Initial state: [-0.022  0.024]
+Final state: [ 0. -0.]
+Average Optimized Cost on Running MPC 0.0012442457060914706
+input tensor shape hi [-0.022  0.024]
 Any param requires grad: True
 Model training mode: True
-input tensor shape tensor([[-0.0044, -0.0003]])
+input tensor shape tensor([[0.0038, 0.0177]])
 J_pred shape torch.Size([1])
 target shape torch.Size([1])
 J_pred.requires_grad: True
 loss_fn input shapes: torch.Size([1]) torch.Size([1])
 Epoch [1/1000], Loss: 0.0000
-input tensor shape tensor([[-0.0178, -0.0224]])
+input tensor shape tensor([[0.0009, 0.0142]])
 J_pred shape torch.Size([1])
 target shape torch.Size([1])
 J_pred.requires_grad: True
 loss_fn input shapes: torch.Size([1]) torch.Size([1])
 Epoch [2/1000], Loss: 0.0000
-input tensor shape tensor([[0.0086, 0.0120]])
+input tensor shape tensor([[-0.0056,  0.0020]])
 J_pred shape torch.Size([1])
 target shape torch.Size([1])
 J_pred.requires_grad: True
 loss_fn input shapes: torch.Size([1]) torch.Size([1])
 Epoch [3/1000], Loss: 0.0000
-input tensor shape tensor([[-0.0024,  0.0244]])
+input tensor shape tensor([[ 0.0112, -0.0156]])
 J_pred shape torch.Size([1])
 target shape torch.Size([1])
 J_pred.requires_grad: True
 loss_fn input shapes: torch.Size([1]) torch.Size([1])
 Epoch [4/1000], Loss: 0.0000
-input tensor shape tensor([[-0.0022,  0.0193]])
+input tensor shape tensor([[0.0198, 0.0065]])
 J_pred shape torch.Size([1])
 target shape torch.Size([1])
 J_pred.requires_grad: True
 loss_fn input shapes: torch.Size([1]) torch.Size([1])
 Epoch [5/1000], Loss: 0.0000
-input tensor shape tensor([[-0.0208, -0.0122]])
+input tensor shape tensor([[0.0020, 0.0209]])
 J_pred shape torch.Size([1])
 target shape torch.Size([1])
 J_pred.requires_grad: True
 loss_fn input shapes: torch.Size([1]) torch.Size([1])
 Epoch [6/1000], Loss: 0.0000
-input tensor shape tensor([[ 0.0192, -0.0204]])
+input tensor shape tensor([[0.0179, 0.0059]])
 J_pred shape torch.Size([1])
 target shape torch.Size([1])
 J_pred.requires_grad: True
 loss_fn input shapes: torch.Size([1]) torch.Size([1])
 Epoch [7/1000], Loss: 0.0000
-input tensor shape tensor([[-0.0082, -0.0104]])
+input tensor shape tensor([[-0.0171,  0.0213]])
 J_pred shape torch.Size([1])
 target shape torch.Size([1])
 J_pred.requires_grad: True
 loss_fn input shapes: torch.Size([1]) torch.Size([1])
 Epoch [8/1000], Loss: 0.0000
-input tensor shape tensor([[-0.0103, -0.0058]])
+input tensor shape tensor([[ 0.0016, -0.0137]])
 J_pred shape torch.Size([1])
 target shape torch.Size([1])
 J_pred.requires_grad: True
 loss_fn input shapes: torch.Size([1]) torch.Size([1])
 Epoch [9/1000], Loss: 0.0000
-input tensor shape tensor([[-0.0038, -0.0013]])
+input tensor shape tensor([[-0.0214,  0.0077]])
 J_pred shape torch.Size([1])
 target shape torch.Size([1])
 J_pred.requires_grad: True
 loss_fn input shapes: torch.Size([1]) torch.Size([1])
 Epoch [10/1000], Loss: 0.0000
-input tensor shape tensor([[-0.0184,  0.0212]])
+input tensor shape tensor([[-0.0238, -0.0246]])
 J_pred shape torch.Size([1])
 target shape torch.Size([1])
 J_pred.requires_grad: True
 loss_fn input shapes: torch.Size([1]) torch.Size([1])
 Epoch [11/1000], Loss: 0.0000
-input tensor shape tensor([[-0.0015, -0.0122]])
+input tensor shape tensor([[0.0172, 0.0185]])
 J_pred shape torch.Size([1])
 target shape torch.Size([1])
 J_pred.requires_grad: True
 loss_fn input shapes: torch.Size([1]) torch.Size([1])
 Epoch [12/1000], Loss: 0.0000
-input tensor shape tensor([[-0.0126,  0.0059]])
+input tensor shape tensor([[0.0212, 0.0145]])
 J_pred shape torch.Size([1])
 target shape torch.Size([1])
 J_pred.requires_grad: True
 loss_fn input shapes: torch.Size([1]) torch.Size([1])
 Epoch [13/1000], Loss: 0.0000
-input tensor shape tensor([[-0.0012, -0.0204]])
+input tensor shape tensor([[0.0125, 0.0188]])
 J_pred shape torch.Size([1])
 target shape torch.Size([1])
 J_pred.requires_grad: True
 loss_fn input shapes: torch.Size([1]) torch.Size([1])
 Epoch [14/1000], Loss: 0.0000
-input tensor shape tensor([[-0.0245, -0.0227]])
+input tensor shape tensor([[-0.0154,  0.0207]])
 J_pred shape torch.Size([1])
 target shape torch.Size([1])
 J_pred.requires_grad: True
 loss_fn input shapes: torch.Size([1]) torch.Size([1])
 Epoch [15/1000], Loss: 0.0000
-input tensor shape tensor([[-0.0126, -0.0166]])
+input tensor shape tensor([[ 0.0182, -0.0152]])
 J_pred shape torch.Size([1])
 target shape torch.Size([1])
 J_pred.requires_grad: True
 loss_fn input shapes: torch.Size([1]) torch.Size([1])
 Epoch [16/1000], Loss: 0.0000
-input tensor shape tensor([[ 0.0093, -0.0103]])
+input tensor shape tensor([[ 0.0164, -0.0155]])
 J_pred shape torch.Size([1])
 target shape torch.Size([1])
 J_pred.requires_grad: True
 loss_fn input shapes: torch.Size([1]) torch.Size([1])
 Epoch [17/1000], Loss: 0.0000
-input tensor shape tensor([[ 0.0103, -0.0110]])
+input tensor shape tensor([[-0.0029, -0.0101]])
 J_pred shape torch.Size([1])
 target shape torch.Size([1])
 J_pred.requires_grad: True
 loss_fn input shapes: torch.Size([1]) torch.Size([1])
 Epoch [18/1000], Loss: 0.0000
-input tensor shape tensor([[ 0.0161, -0.0195]])
+input tensor shape tensor([[-0.0201, -0.0139]])
 J_pred shape torch.Size([1])
 target shape torch.Size([1])
 J_pred.requires_grad: True
 loss_fn input shapes: torch.Size([1]) torch.Size([1])
 Epoch [19/1000], Loss: 0.0000
-input tensor shape tensor([[ 0.0200, -0.0196]])
+input tensor shape tensor([[-0.0129, -0.0076]])
 J_pred shape torch.Size([1])
 target shape torch.Size([1])
 J_pred.requires_grad: True
 loss_fn input shapes: torch.Size([1]) torch.Size([1])
 Epoch [20/1000], Loss: 0.0000
-input tensor shape tensor([[ 0.0121, -0.0094]])
+input tensor shape tensor([[-0.0184, -0.0116]])
 J_pred shape torch.Size([1])
 target shape torch.Size([1])
 J_pred.requires_grad: True
 loss_fn input shapes: torch.Size([1]) torch.Size([1])
 Epoch [21/1000], Loss: 0.0000
-input tensor shape tensor([[0.0021, 0.0189]])
+input tensor shape tensor([[ 0.0163, -0.0089]])
 J_pred shape torch.Size([1])
 target shape torch.Size([1])
 J_pred.requires_grad: True
 loss_fn input shapes: torch.Size([1]) torch.Size([1])
 Epoch [22/1000], Loss: 0.0000
-input tensor shape tensor([[-0.0229,  0.0198]])
+input tensor shape tensor([[0.0157, 0.0165]])
 J_pred shape torch.Size([1])
 target shape torch.Size([1])
 J_pred.requires_grad: True
 loss_fn input shapes: torch.Size([1]) torch.Size([1])
 Epoch [23/1000], Loss: 0.0000
-input tensor shape tensor([[-0.0130,  0.0074]])
+input tensor shape tensor([[-0.0183,  0.0040]])
 J_pred shape torch.Size([1])
 target shape torch.Size([1])
 J_pred.requires_grad: True
 loss_fn input shapes: torch.Size([1]) torch.Size([1])
 Epoch [24/1000], Loss: 0.0000
-input tensor shape tensor([[-0.0215, -0.0131]])
+input tensor shape tensor([[-0.0228, -0.0051]])
 J_pred shape torch.Size([1])
 target shape torch.Size([1])
 J_pred.requires_grad: True
 loss_fn input shapes: torch.Size([1]) torch.Size([1])
 Epoch [25/1000], Loss: 0.0000
-input tensor shape tensor([[0.0062, 0.0063]])
+input tensor shape tensor([[-0.0211,  0.0117]])
 J_pred shape torch.Size([1])
 target shape torch.Size([1])
 J_pred.requires_grad: True
 loss_fn input shapes: torch.Size([1]) torch.Size([1])
 Epoch [26/1000], Loss: 0.0000
-input tensor shape tensor([[-0.0189,  0.0222]])
+input tensor shape tensor([[-0.0017, -0.0014]])
 J_pred shape torch.Size([1])
 target shape torch.Size([1])
 J_pred.requires_grad: True
 loss_fn input shapes: torch.Size([1]) torch.Size([1])
 Epoch [27/1000], Loss: 0.0000
-input tensor shape tensor([[0.0119, 0.0201]])
+input tensor shape tensor([[-0.0143,  0.0179]])
 J_pred shape torch.Size([1])
 target shape torch.Size([1])
 J_pred.requires_grad: True
 loss_fn input shapes: torch.Size([1]) torch.Size([1])
 Epoch [28/1000], Loss: 0.0000
-input tensor shape tensor([[-0.0184, -0.0066]])
+input tensor shape tensor([[ 0.0073, -0.0046]])
 J_pred shape torch.Size([1])
 target shape torch.Size([1])
 J_pred.requires_grad: True
 loss_fn input shapes: torch.Size([1]) torch.Size([1])
 Epoch [29/1000], Loss: 0.0000
-input tensor shape tensor([[0.0116, 0.0034]])
+input tensor shape tensor([[-0.0011,  0.0178]])
 J_pred shape torch.Size([1])
 target shape torch.Size([1])
 J_pred.requires_grad: True
 loss_fn input shapes: torch.Size([1]) torch.Size([1])
 Epoch [30/1000], Loss: 0.0000
-input tensor shape tensor([[-0.0191, -0.0112]])
+input tensor shape tensor([[-0.0024,  0.0171]])
 J_pred shape torch.Size([1])
 target shape torch.Size([1])
 J_pred.requires_grad: True
 loss_fn input shapes: torch.Size([1]) torch.Size([1])
 Epoch [31/1000], Loss: 0.0000
-input tensor shape tensor([[-0.0045, -0.0015]])
+input tensor shape tensor([[ 0.0084, -0.0171]])
 J_pred shape torch.Size([1])
 target shape torch.Size([1])
 J_pred.requires_grad: True
 loss_fn input shapes: torch.Size([1]) torch.Size([1])
 Epoch [32/1000], Loss: 0.0000
-input tensor shape tensor([[0.0176, 0.0174]])
+input tensor shape tensor([[ 0.0054, -0.0148]])
 J_pred shape torch.Size([1])
 target shape torch.Size([1])
 J_pred.requires_grad: True
 loss_fn input shapes: torch.Size([1]) torch.Size([1])
 Epoch [33/1000], Loss: 0.0000
-input tensor shape tensor([[-0.0007, -0.0157]])
+input tensor shape tensor([[ 0.0213, -0.0228]])
 J_pred shape torch.Size([1])
 target shape torch.Size([1])
 J_pred.requires_grad: True
 loss_fn input shapes: torch.Size([1]) torch.Size([1])
 Epoch [34/1000], Loss: 0.0000
-input tensor shape tensor([[-0.0228,  0.0244]])
+input tensor shape tensor([[-0.0161,  0.0223]])
 J_pred shape torch.Size([1])
 target shape torch.Size([1])
 J_pred.requires_grad: True
 loss_fn input shapes: torch.Size([1]) torch.Size([1])
 Epoch [35/1000], Loss: 0.0000
-input tensor shape tensor([[ 0.0171, -0.0121]])
+input tensor shape tensor([[-0.0108, -0.0008]])
 J_pred shape torch.Size([1])
 target shape torch.Size([1])
 J_pred.requires_grad: True
 loss_fn input shapes: torch.Size([1]) torch.Size([1])
 Epoch [36/1000], Loss: 0.0000
-input tensor shape tensor([[0.0136, 0.0112]])
+input tensor shape tensor([[ 0.0077, -0.0040]])
 J_pred shape torch.Size([1])
 target shape torch.Size([1])
 J_pred.requires_grad: True
 loss_fn input shapes: torch.Size([1]) torch.Size([1])
 Epoch [37/1000], Loss: 0.0000
-input tensor shape tensor([[0.0229, 0.0092]])
+input tensor shape tensor([[-0.0148, -0.0185]])
 J_pred shape torch.Size([1])
 target shape torch.Size([1])
 J_pred.requires_grad: True
 loss_fn input shapes: torch.Size([1]) torch.Size([1])
 Epoch [38/1000], Loss: 0.0000
-input tensor shape tensor([[-0.0058,  0.0047]])
+input tensor shape tensor([[0.0175, 0.0190]])
 J_pred shape torch.Size([1])
 target shape torch.Size([1])
 J_pred.requires_grad: True
 loss_fn input shapes: torch.Size([1]) torch.Size([1])
 Epoch [39/1000], Loss: 0.0000
-input tensor shape tensor([[0.0015, 0.0030]])
+input tensor shape tensor([[ 0.0093, -0.0179]])
 J_pred shape torch.Size([1])
 target shape torch.Size([1])
 J_pred.requires_grad: True
 loss_fn input shapes: torch.Size([1]) torch.Size([1])
 Epoch [40/1000], Loss: 0.0000
-input tensor shape tensor([[0.0144, 0.0143]])
+input tensor shape tensor([[0.0062, 0.0123]])
 J_pred shape torch.Size([1])
 target shape torch.Size([1])
 J_pred.requires_grad: True
 loss_fn input shapes: torch.Size([1]) torch.Size([1])
 Epoch [41/1000], Loss: 0.0000
-input tensor shape tensor([[-0.0181,  0.0195]])
+input tensor shape tensor([[-0.0117,  0.0225]])
 J_pred shape torch.Size([1])
 target shape torch.Size([1])
 J_pred.requires_grad: True
 loss_fn input shapes: torch.Size([1]) torch.Size([1])
 Epoch [42/1000], Loss: 0.0000
-input tensor shape tensor([[ 0.0004, -0.0186]])
+input tensor shape tensor([[-0.0050,  0.0095]])
 J_pred shape torch.Size([1])
 target shape torch.Size([1])
 J_pred.requires_grad: True
 loss_fn input shapes: torch.Size([1]) torch.Size([1])
 Epoch [43/1000], Loss: 0.0000
-input tensor shape tensor([[1.7574e-02, 7.9521e-05]])
+input tensor shape tensor([[-0.0105,  0.0159]])
 J_pred shape torch.Size([1])
 target shape torch.Size([1])
 J_pred.requires_grad: True
 loss_fn input shapes: torch.Size([1]) torch.Size([1])
 Epoch [44/1000], Loss: 0.0000
-input tensor shape tensor([[0.0176, 0.0040]])
+input tensor shape tensor([[0.0147, 0.0095]])
 J_pred shape torch.Size([1])
 target shape torch.Size([1])
 J_pred.requires_grad: True
 loss_fn input shapes: torch.Size([1]) torch.Size([1])
 Epoch [45/1000], Loss: 0.0000
-input tensor shape tensor([[-0.0147,  0.0127]])
+input tensor shape tensor([[0.0139, 0.0018]])
 J_pred shape torch.Size([1])
 target shape torch.Size([1])
 J_pred.requires_grad: True
 loss_fn input shapes: torch.Size([1]) torch.Size([1])
 Epoch [46/1000], Loss: 0.0000
-input tensor shape tensor([[0.0146, 0.0080]])
+input tensor shape tensor([[-0.0100,  0.0181]])
 J_pred shape torch.Size([1])
 target shape torch.Size([1])
 J_pred.requires_grad: True
 loss_fn input shapes: torch.Size([1]) torch.Size([1])
 Epoch [47/1000], Loss: 0.0000
-input tensor shape tensor([[0.0207, 0.0227]])
+input tensor shape tensor([[ 0.0124, -0.0147]])
 J_pred shape torch.Size([1])
 target shape torch.Size([1])
 J_pred.requires_grad: True
 loss_fn input shapes: torch.Size([1]) torch.Size([1])
 Epoch [48/1000], Loss: 0.0000
-input tensor shape tensor([[-0.0245,  0.0197]])
+input tensor shape tensor([[-0.0225,  0.0029]])
 J_pred shape torch.Size([1])
 target shape torch.Size([1])
 J_pred.requires_grad: True
 loss_fn input shapes: torch.Size([1]) torch.Size([1])
 Epoch [49/1000], Loss: 0.0000
-input tensor shape tensor([[-0.0167,  0.0038]])
+input tensor shape tensor([[-0.0172,  0.0211]])
 J_pred shape torch.Size([1])
 target shape torch.Size([1])
 J_pred.requires_grad: True
 loss_fn input shapes: torch.Size([1]) torch.Size([1])
 Epoch [50/1000], Loss: 0.0000
-input tensor shape tensor([[-7.2192e-03,  9.1918e-05]])
+input tensor shape tensor([[ 0.0143, -0.0196]])
 J_pred shape torch.Size([1])
 target shape torch.Size([1])
 J_pred.requires_grad: True
 loss_fn input shapes: torch.Size([1]) torch.Size([1])
 Epoch [51/1000], Loss: 0.0000
-input tensor shape tensor([[-0.0082,  0.0019]])
+input tensor shape tensor([[-0.0155,  0.0169]])
 J_pred shape torch.Size([1])
 target shape torch.Size([1])
 J_pred.requires_grad: True
 loss_fn input shapes: torch.Size([1]) torch.Size([1])
 Epoch [52/1000], Loss: 0.0000
-input tensor shape tensor([[ 0.0090, -0.0119]])
+input tensor shape tensor([[0.0105, 0.0201]])
 J_pred shape torch.Size([1])
 target shape torch.Size([1])
 J_pred.requires_grad: True
 loss_fn input shapes: torch.Size([1]) torch.Size([1])
 Epoch [53/1000], Loss: 0.0000
-input tensor shape tensor([[-0.0004,  0.0028]])
+input tensor shape tensor([[0.0075, 0.0041]])
 J_pred shape torch.Size([1])
 target shape torch.Size([1])
 J_pred.requires_grad: True
 loss_fn input shapes: torch.Size([1]) torch.Size([1])
 Epoch [54/1000], Loss: 0.0000
-input tensor shape tensor([[-0.0121, -0.0017]])
+input tensor shape tensor([[0.0074, 0.0006]])
 J_pred shape torch.Size([1])
 target shape torch.Size([1])
 J_pred.requires_grad: True
 loss_fn input shapes: torch.Size([1]) torch.Size([1])
 Epoch [55/1000], Loss: 0.0000
-input tensor shape tensor([[ 0.0239, -0.0032]])
+input tensor shape tensor([[ 0.0073, -0.0228]])
 J_pred shape torch.Size([1])
 target shape torch.Size([1])
 J_pred.requires_grad: True
 loss_fn input shapes: torch.Size([1]) torch.Size([1])
 Epoch [56/1000], Loss: 0.0000
-input tensor shape tensor([[-0.0129, -0.0198]])
+input tensor shape tensor([[ 0.0139, -0.0022]])
 J_pred shape torch.Size([1])
 target shape torch.Size([1])
 J_pred.requires_grad: True
 loss_fn input shapes: torch.Size([1]) torch.Size([1])
 Epoch [57/1000], Loss: 0.0000
-input tensor shape tensor([[-0.0109,  0.0014]])
+input tensor shape tensor([[0.0099, 0.0216]])
 J_pred shape torch.Size([1])
 target shape torch.Size([1])
 J_pred.requires_grad: True
 loss_fn input shapes: torch.Size([1]) torch.Size([1])
 Epoch [58/1000], Loss: 0.0000
-input tensor shape tensor([[-0.0158, -0.0175]])
+input tensor shape tensor([[-0.0146, -0.0152]])
 J_pred shape torch.Size([1])
 target shape torch.Size([1])
 J_pred.requires_grad: True
 loss_fn input shapes: torch.Size([1]) torch.Size([1])
 Epoch [59/1000], Loss: 0.0000
-input tensor shape tensor([[0.0075, 0.0214]])
+input tensor shape tensor([[ 0.0034, -0.0047]])
 J_pred shape torch.Size([1])
 target shape torch.Size([1])
 J_pred.requires_grad: True
 loss_fn input shapes: torch.Size([1]) torch.Size([1])
 Epoch [60/1000], Loss: 0.0000
-input tensor shape tensor([[-0.0146, -0.0093]])
+input tensor shape tensor([[-0.0241, -0.0101]])
 J_pred shape torch.Size([1])
 target shape torch.Size([1])
 J_pred.requires_grad: True
 loss_fn input shapes: torch.Size([1]) torch.Size([1])
 Epoch [61/1000], Loss: 0.0000
-input tensor shape tensor([[ 0.0185, -0.0036]])
+input tensor shape tensor([[0.0187, 0.0001]])
 J_pred shape torch.Size([1])
 target shape torch.Size([1])
 J_pred.requires_grad: True
 loss_fn input shapes: torch.Size([1]) torch.Size([1])
 Epoch [62/1000], Loss: 0.0000
-input tensor shape tensor([[-0.0009,  0.0005]])
+input tensor shape tensor([[0.0094, 0.0068]])
 J_pred shape torch.Size([1])
 target shape torch.Size([1])
 J_pred.requires_grad: True
 loss_fn input shapes: torch.Size([1]) torch.Size([1])
 Epoch [63/1000], Loss: 0.0000
-input tensor shape tensor([[ 0.0244, -0.0108]])
+input tensor shape tensor([[-0.0070,  0.0193]])
 J_pred shape torch.Size([1])
 target shape torch.Size([1])
 J_pred.requires_grad: True
 loss_fn input shapes: torch.Size([1]) torch.Size([1])
 Epoch [64/1000], Loss: 0.0000
-input tensor shape tensor([[-0.0179,  0.0225]])
+input tensor shape tensor([[-0.0036,  0.0099]])
 J_pred shape torch.Size([1])
 target shape torch.Size([1])
 J_pred.requires_grad: True
 loss_fn input shapes: torch.Size([1]) torch.Size([1])
 Epoch [65/1000], Loss: 0.0000
-input tensor shape tensor([[-0.0081, -0.0190]])
+input tensor shape tensor([[-0.0215, -0.0188]])
 J_pred shape torch.Size([1])
 target shape torch.Size([1])
 J_pred.requires_grad: True
 loss_fn input shapes: torch.Size([1]) torch.Size([1])
 Epoch [66/1000], Loss: 0.0000
-input tensor shape tensor([[ 0.0028, -0.0019]])
+input tensor shape tensor([[-0.0145,  0.0236]])
 J_pred shape torch.Size([1])
 target shape torch.Size([1])
 J_pred.requires_grad: True
 loss_fn input shapes: torch.Size([1]) torch.Size([1])
 Epoch [67/1000], Loss: 0.0000
-input tensor shape tensor([[0.0224, 0.0074]])
+input tensor shape tensor([[-0.0083, -0.0197]])
 J_pred shape torch.Size([1])
 target shape torch.Size([1])
 J_pred.requires_grad: True
 loss_fn input shapes: torch.Size([1]) torch.Size([1])
 Epoch [68/1000], Loss: 0.0000
-input tensor shape tensor([[-0.0139, -0.0249]])
+input tensor shape tensor([[ 0.0081, -0.0125]])
 J_pred shape torch.Size([1])
 target shape torch.Size([1])
 J_pred.requires_grad: True
 loss_fn input shapes: torch.Size([1]) torch.Size([1])
 Epoch [69/1000], Loss: 0.0000
-input tensor shape tensor([[0.0040, 0.0147]])
+input tensor shape tensor([[-0.0183, -0.0068]])
 J_pred shape torch.Size([1])
 target shape torch.Size([1])
 J_pred.requires_grad: True
 loss_fn input shapes: torch.Size([1]) torch.Size([1])
 Epoch [70/1000], Loss: 0.0000
-input tensor shape tensor([[-0.0127, -0.0195]])
+input tensor shape tensor([[-0.0225,  0.0028]])
 J_pred shape torch.Size([1])
 target shape torch.Size([1])
 J_pred.requires_grad: True
 loss_fn input shapes: torch.Size([1]) torch.Size([1])
 Epoch [71/1000], Loss: 0.0000
-input tensor shape tensor([[-0.0133, -0.0247]])
+input tensor shape tensor([[-0.0162,  0.0183]])
 J_pred shape torch.Size([1])
 target shape torch.Size([1])
 J_pred.requires_grad: True
 loss_fn input shapes: torch.Size([1]) torch.Size([1])
 Epoch [72/1000], Loss: 0.0000
-input tensor shape tensor([[0.0112, 0.0096]])
+input tensor shape tensor([[ 0.0094, -0.0231]])
 J_pred shape torch.Size([1])
 target shape torch.Size([1])
 J_pred.requires_grad: True
 loss_fn input shapes: torch.Size([1]) torch.Size([1])
 Epoch [73/1000], Loss: 0.0000
-input tensor shape tensor([[-0.0035,  0.0212]])
+input tensor shape tensor([[-0.0053, -0.0175]])
 J_pred shape torch.Size([1])
 target shape torch.Size([1])
 J_pred.requires_grad: True
 loss_fn input shapes: torch.Size([1]) torch.Size([1])
 Epoch [74/1000], Loss: 0.0000
-input tensor shape tensor([[-0.0007, -0.0148]])
+input tensor shape tensor([[-0.0098, -0.0144]])
 J_pred shape torch.Size([1])
 target shape torch.Size([1])
 J_pred.requires_grad: True
 loss_fn input shapes: torch.Size([1]) torch.Size([1])
 Epoch [75/1000], Loss: 0.0000
-input tensor shape tensor([[ 0.0178, -0.0195]])
+input tensor shape tensor([[0.0160, 0.0198]])
 J_pred shape torch.Size([1])
-CUDA is available! Using GPU cuda.
 target shape torch.Size([1])
+CUDA is available! Using GPU cuda.
 J_pred.requires_grad: True
 loss_fn input shapes: torch.Size([1]) torch.Size([1])
 Epoch [76/1000], Loss: 0.0000
-input tensor shape tensor([[-0.0006,  0.0040]])
+input tensor shape tensor([[ 0.0218, -0.0125]])
 J_pred shape torch.Size([1])
 target shape torch.Size([1])
 J_pred.requires_grad: True
 loss_fn input shapes: torch.Size([1]) torch.Size([1])
 Epoch [77/1000], Loss: 0.0000
-input tensor shape tensor([[ 0.0004, -0.0002]])
+input tensor shape tensor([[0.0234, 0.0232]])
 J_pred shape torch.Size([1])
 target shape torch.Size([1])
 J_pred.requires_grad: True
 loss_fn input shapes: torch.Size([1]) torch.Size([1])
 Epoch [78/1000], Loss: 0.0000
-input tensor shape tensor([[-0.0120, -0.0028]])
+input tensor shape tensor([[ 0.0176, -0.0038]])
 J_pred shape torch.Size([1])
 target shape torch.Size([1])
 J_pred.requires_grad: True
 loss_fn input shapes: torch.Size([1]) torch.Size([1])
 Epoch [79/1000], Loss: 0.0000
-input tensor shape tensor([[ 0.0141, -0.0201]])
+input tensor shape tensor([[-0.0224, -0.0051]])
 J_pred shape torch.Size([1])
 target shape torch.Size([1])
 J_pred.requires_grad: True
 loss_fn input shapes: torch.Size([1]) torch.Size([1])
 Epoch [80/1000], Loss: 0.0000
-input tensor shape tensor([[-0.0208,  0.0033]])
+input tensor shape tensor([[-0.0236, -0.0167]])
 J_pred shape torch.Size([1])
 target shape torch.Size([1])
 J_pred.requires_grad: True
 loss_fn input shapes: torch.Size([1]) torch.Size([1])
 Epoch [81/1000], Loss: 0.0000
-input tensor shape tensor([[ 0.0024, -0.0214]])
+input tensor shape tensor([[-0.0147, -0.0115]])
 J_pred shape torch.Size([1])
 target shape torch.Size([1])
 J_pred.requires_grad: True
 loss_fn input shapes: torch.Size([1]) torch.Size([1])
 Epoch [82/1000], Loss: 0.0000
-input tensor shape tensor([[ 0.0162, -0.0172]])
+input tensor shape tensor([[ 0.0081, -0.0128]])
 J_pred shape torch.Size([1])
 target shape torch.Size([1])
 J_pred.requires_grad: True
 loss_fn input shapes: torch.Size([1]) torch.Size([1])
 Epoch [83/1000], Loss: 0.0000
-input tensor shape tensor([[-0.0090,  0.0098]])
+input tensor shape tensor([[-0.0187, -0.0019]])
 J_pred shape torch.Size([1])
 target shape torch.Size([1])
 J_pred.requires_grad: True
 loss_fn input shapes: torch.Size([1]) torch.Size([1])
 Epoch [84/1000], Loss: 0.0000
-input tensor shape tensor([[-0.0030,  0.0126]])
+input tensor shape tensor([[-0.0201, -0.0052]])
 J_pred shape torch.Size([1])
 target shape torch.Size([1])
 J_pred.requires_grad: True
 loss_fn input shapes: torch.Size([1]) torch.Size([1])
 Epoch [85/1000], Loss: 0.0000
-input tensor shape tensor([[-0.0115, -0.0097]])
+input tensor shape tensor([[ 0.0213, -0.0159]])
 J_pred shape torch.Size([1])
 target shape torch.Size([1])
 J_pred.requires_grad: True
 loss_fn input shapes: torch.Size([1]) torch.Size([1])
 Epoch [86/1000], Loss: 0.0000
-input tensor shape tensor([[ 0.0163, -0.0082]])
+input tensor shape tensor([[0.0174, 0.0187]])
 J_pred shape torch.Size([1])
 target shape torch.Size([1])
 J_pred.requires_grad: True
 loss_fn input shapes: torch.Size([1]) torch.Size([1])
 Epoch [87/1000], Loss: 0.0000
-input tensor shape tensor([[0.0004, 0.0122]])
+input tensor shape tensor([[-0.0038,  0.0189]])
 J_pred shape torch.Size([1])
 target shape torch.Size([1])
 J_pred.requires_grad: True
 loss_fn input shapes: torch.Size([1]) torch.Size([1])
 Epoch [88/1000], Loss: 0.0000
-input tensor shape tensor([[-0.0020,  0.0101]])
+input tensor shape tensor([[-0.0140,  0.0243]])
 J_pred shape torch.Size([1])
 target shape torch.Size([1])
 J_pred.requires_grad: True
 loss_fn input shapes: torch.Size([1]) torch.Size([1])
 Epoch [89/1000], Loss: 0.0000
-input tensor shape tensor([[-0.0214, -0.0195]])
+input tensor shape tensor([[ 0.0151, -0.0127]])
 J_pred shape torch.Size([1])
 target shape torch.Size([1])
 J_pred.requires_grad: True
 loss_fn input shapes: torch.Size([1]) torch.Size([1])
 Epoch [90/1000], Loss: 0.0000
-input tensor shape tensor([[ 0.0022, -0.0036]])
+input tensor shape tensor([[ 0.0063, -0.0130]])
 J_pred shape torch.Size([1])
 target shape torch.Size([1])
 J_pred.requires_grad: True
 loss_fn input shapes: torch.Size([1]) torch.Size([1])
 Epoch [91/1000], Loss: 0.0000
-input tensor shape tensor([[-0.0158,  0.0064]])
+input tensor shape tensor([[ 0.0128, -0.0103]])
 J_pred shape torch.Size([1])
 target shape torch.Size([1])
 J_pred.requires_grad: True
 loss_fn input shapes: torch.Size([1]) torch.Size([1])
 Epoch [92/1000], Loss: 0.0000
-input tensor shape tensor([[-0.0176, -0.0024]])
+input tensor shape tensor([[-0.0081,  0.0027]])
 J_pred shape torch.Size([1])
 target shape torch.Size([1])
 J_pred.requires_grad: True
 loss_fn input shapes: torch.Size([1]) torch.Size([1])
 Epoch [93/1000], Loss: 0.0000
-input tensor shape tensor([[-0.0139, -0.0087]])
+input tensor shape tensor([[0.0111, 0.0049]])
 J_pred shape torch.Size([1])
 target shape torch.Size([1])
 J_pred.requires_grad: True
 loss_fn input shapes: torch.Size([1]) torch.Size([1])
 Epoch [94/1000], Loss: 0.0000
-input tensor shape tensor([[-0.0224,  0.0217]])
+input tensor shape tensor([[0.0093, 0.0070]])
 J_pred shape torch.Size([1])
 target shape torch.Size([1])
 J_pred.requires_grad: True
 loss_fn input shapes: torch.Size([1]) torch.Size([1])
 Epoch [95/1000], Loss: 0.0000
-input tensor shape tensor([[-0.0189, -0.0242]])
+input tensor shape tensor([[-0.0155, -0.0175]])
 J_pred shape torch.Size([1])
 target shape torch.Size([1])
 J_pred.requires_grad: True
 loss_fn input shapes: torch.Size([1]) torch.Size([1])
 Epoch [96/1000], Loss: 0.0000
-input tensor shape tensor([[-0.0237, -0.0026]])
+input tensor shape tensor([[0.0174, 0.0041]])
 J_pred shape torch.Size([1])
 target shape torch.Size([1])
 J_pred.requires_grad: True
 loss_fn input shapes: torch.Size([1]) torch.Size([1])
 Epoch [97/1000], Loss: 0.0000
-input tensor shape tensor([[-0.0124,  0.0181]])
+input tensor shape tensor([[ 0.0078, -0.0219]])
 J_pred shape torch.Size([1])
 target shape torch.Size([1])
 J_pred.requires_grad: True
 loss_fn input shapes: torch.Size([1]) torch.Size([1])
 Epoch [98/1000], Loss: 0.0000
-input tensor shape tensor([[0.0155, 0.0098]])
+input tensor shape tensor([[0.0219, 0.0105]])
 J_pred shape torch.Size([1])
 target shape torch.Size([1])
 J_pred.requires_grad: True
 loss_fn input shapes: torch.Size([1]) torch.Size([1])
 Epoch [99/1000], Loss: 0.0000
-input tensor shape tensor([[-0.0085,  0.0055]])
+input tensor shape tensor([[-0.0217,  0.0243]])
 J_pred shape torch.Size([1])
 target shape torch.Size([1])
 J_pred.requires_grad: True
@@ -1214,188 +1214,188 @@ Final predicted terminal cost: nn_func:(i0[2])->(o0) MXFunction
 terminal cost 0
 Solver time: 0.00s
 Optimization completed successfully for Test 0 with M = 5 and without Terminal Cost!
-Final cost: 0.00033394310535959275
-Initial state: [-0.01   0.005]
-Final state: [0.    0.009]
+Final cost: 0.00043772387483756816
+Initial state: [-0.018  0.023]
+Final state: [0.    0.012]
 terminal cost (100000*nn_func(opti101_x_6){0})
-Solver time: 1.43s
+Solver time: 1.41s
 Optimization completed successfully for Test 0 with M = 5 and Terminal Cost!
-Final cost: 0.00040464498179621096
-Initial state: [-0.01   0.005]
+Final cost: 0.0005502219993632417
+Initial state: [-0.018  0.023]
 Final state: [0. 0.]
 terminal cost 0
 Solver time: 0.18s
 Optimization completed successfully for Test 0 with N+M  = 505 and without Terminal Cost!
-Final cost: 0.0002800653507021989
-Initial state: [-0.01   0.005]
+Final cost: 0.0003935685136077058
+Initial state: [-0.018  0.023]
 Final state: [0. 0.]
 terminal cost 0
 Solver time: 0.01s
 Optimization completed successfully for Test 1 with M = 5 and without Terminal Cost!
-Final cost: 0.0013007194268283017
-Initial state: [0.008 0.016]
-Final state: [ 0.    -0.016]
+Final cost: 0.004586107393964492
+Initial state: [0.019 0.02 ]
+Final state: [ 0.    -0.031]
 terminal cost (100000*nn_func(opti104_x_6){0})
 Solver time: 0.02s
 Optimization completed successfully for Test 0 with M = 5 and Terminal Cost!
-Final cost: 0.0014965549344853315
-Initial state: [0.008 0.016]
+Final cost: 0.00534239702940325
+Initial state: [0.019 0.02 ]
 Final state: [-0. -0.]
 terminal cost 0
 Solver time: 0.18s
 Optimization completed successfully for Test 0 with N+M  = 510 and without Terminal Cost!
-Final cost: 0.001066521165798813
-Initial state: [0.008 0.016]
+Final cost: 0.0037675263719588858
+Initial state: [0.019 0.02 ]
 Final state: [ 0. -0.]
 terminal cost 0
 Solver time: 0.01s
 Optimization completed successfully for Test 2 with M = 5 and without Terminal Cost!
-Final cost: 0.0022425074384575185
-Initial state: [0.012 0.017]
-Final state: [ 0.    -0.021]
+Final cost: 2.4947341651599327e-06
+Initial state: [-0.001  0.003]
+Final state: [ 0. -0.]
 terminal cost (100000*nn_func(opti107_x_6){0})
-Solver time: 0.02s
+Solver time: 0.01s
 Optimization completed successfully for Test 0 with M = 5 and Terminal Cost!
-Final cost: 0.002597751176083776
-Initial state: [0.012 0.017]
+Final cost: 2.504108865849919e-06
+Initial state: [-0.001  0.003]
 Final state: [ 0. -0.]
 terminal cost 0
 Solver time: 0.18s
 Optimization completed successfully for Test 0 with N+M  = 515 and without Terminal Cost!
-Final cost: 0.0018402129105103027
-Initial state: [0.012 0.017]
+Final cost: 2.2843920425787567e-06
+Initial state: [-0.001  0.003]
 Final state: [ 0. -0.]
 terminal cost 0
-Solver time: 0.02s
+Solver time: 0.01s
 Optimization completed successfully for Test 3 with M = 5 and without Terminal Cost!
-Final cost: 0.00015613128171309453
-Initial state: [ 0.004 -0.018]
-Final state: [0.    0.003]
+Final cost: 0.0005573590342150341
+Initial state: [-0.014  0.01 ]
+Final state: [0.    0.012]
 terminal cost (100000*nn_func(opti110_x_6){0})
-Solver time: 0.02s
+Solver time: 0.03s
 Optimization completed successfully for Test 0 with M = 5 and Terminal Cost!
-Final cost: 0.00016449225601331975
-Initial state: [ 0.004 -0.018]
+Final cost: 0.000681831442853184
+Initial state: [-0.014  0.01 ]
 Final state: [0. 0.]
 terminal cost 0
 Solver time: 0.19s
 Optimization completed successfully for Test 0 with N+M  = 520 and without Terminal Cost!
-Final cost: 0.0001324254385859684
-Initial state: [ 0.004 -0.018]
+Final cost: 0.00047200352914565294
+Initial state: [-0.014  0.01 ]
 Final state: [0. 0.]
 terminal cost 0
 Solver time: 0.01s
 Optimization completed successfully for Test 4 with M = 5 and without Terminal Cost!
-Final cost: 0.00038952756855583487
-Initial state: [0.004 0.008]
-Final state: [ 0.    -0.009]
+Final cost: 0.00455792886522515
+Initial state: [0.023 0.012]
+Final state: [ 0.    -0.032]
 terminal cost (100000*nn_func(opti113_x_6){0})
 Solver time: 0.02s
 Optimization completed successfully for Test 0 with M = 5 and Terminal Cost!
-Final cost: 0.000449146468462848
-Initial state: [0.004 0.008]
-Final state: [0. 0.]
-terminal cost 0
-Solver time: 0.20s
-Optimization completed successfully for Test 0 with N+M  = 525 and without Terminal Cost!
-Final cost: 0.0003194541229184403
-Initial state: [0.004 0.008]
+Final cost: 0.005358964677940123
+Initial state: [0.023 0.012]
 Final state: [ 0. -0.]
 terminal cost 0
-Solver time: 0.01s
+Solver time: 0.19s
+Optimization completed successfully for Test 0 with N+M  = 525 and without Terminal Cost!
+Final cost: 0.0037543760114427728
+Initial state: [0.023 0.012]
+Final state: [ 0. -0.]
+terminal cost 0
+Solver time: 0.02s
 Optimization completed successfully for Test 5 with M = 5 and without Terminal Cost!
-Final cost: 0.001836076134030654
-Initial state: [-0.024  0.015]
-Final state: [0.    0.022]
+Final cost: 0.0006986574615932018
+Initial state: [-0.001 -0.02 ]
+Final state: [0.   0.01]
 terminal cost (100000*nn_func(opti116_x_6){0})
 Solver time: 0.02s
 Optimization completed successfully for Test 0 with M = 5 and Terminal Cost!
-Final cost: 0.0022390511720082567
-Initial state: [-0.024  0.015]
+Final cost: 0.0007804275059690819
+Initial state: [-0.001 -0.02 ]
 Final state: [0. 0.]
 terminal cost 0
 Solver time: 0.19s
 Optimization completed successfully for Test 0 with N+M  = 530 and without Terminal Cost!
-Final cost: 0.0015495026774589068
-Initial state: [-0.024  0.015]
+Final cost: 0.0005742147696122533
+Initial state: [-0.001 -0.02 ]
 Final state: [ 0. -0.]
 terminal cost 0
 Solver time: 0.01s
 Optimization completed successfully for Test 6 with M = 5 and without Terminal Cost!
-Final cost: 0.00042017828552584694
-Initial state: [0.001 0.015]
-Final state: [ 0.    -0.008]
+Final cost: 0.0001463409579991398
+Initial state: [-0.009  0.01 ]
+Final state: [0.    0.007]
 terminal cost (100000*nn_func(opti119_x_6){0})
-Solver time: 0.03s
+Solver time: 0.02s
 Optimization completed successfully for Test 0 with M = 5 and Terminal Cost!
-Final cost: 0.00047007127004339397
-Initial state: [0.001 0.015]
-Final state: [-0.  0.]
+Final cost: 0.00018235997861139731
+Initial state: [-0.009  0.01 ]
+Final state: [ 0. -0.]
 terminal cost 0
 Solver time: 0.19s
 Optimization completed successfully for Test 0 with N+M  = 535 and without Terminal Cost!
-Final cost: 0.0003452200004542272
-Initial state: [0.001 0.015]
-Final state: [0. 0.]
+Final cost: 0.000127715335178024
+Initial state: [-0.009  0.01 ]
+Final state: [ 0. -0.]
 terminal cost 0
-Solver time: 0.02s
+Solver time: 0.01s
 Optimization completed successfully for Test 7 with M = 5 and without Terminal Cost!
-Final cost: 0.007446397341045207
-Initial state: [-0.024 -0.025]
-Final state: [0.    0.039]
+Final cost: 0.0011987756277760527
+Initial state: [0.006 0.017]
+Final state: [ 0.    -0.015]
 terminal cost (100000*nn_func(opti122_x_6){0})
 Solver time: 0.02s
 Optimization completed successfully for Test 0 with M = 5 and Terminal Cost!
-Final cost: 0.008676530701223928
-Initial state: [-0.024 -0.025]
+Final cost: 0.0013726638287817666
+Initial state: [0.006 0.017]
+Final state: [-0. -0.]
+terminal cost 0
+Solver time: 0.20s
+Optimization completed successfully for Test 0 with N+M  = 540 and without Terminal Cost!
+Final cost: 0.0009826926009553947
+Initial state: [0.006 0.017]
 Final state: [0. 0.]
 terminal cost 0
-Solver time: 0.19s
-Optimization completed successfully for Test 0 with N+M  = 540 and without Terminal Cost!
-Final cost: 0.006117493919098812
-Initial state: [-0.024 -0.025]
-Final state: [ 0. -0.]
-terminal cost 0
-Solver time: 0.02s
+Solver time: 0.01s
 Optimization completed successfully for Test 8 with M = 5 and without Terminal Cost!
-Final cost: 1.103467541820155e-05
-Initial state: [0.    0.003]
-Final state: [ 0.    -0.001]
+Final cost: 0.0009291855402093363
+Initial state: [0.011 0.003]
+Final state: [ 0.    -0.015]
 terminal cost (100000*nn_func(opti125_x_6){0})
 Solver time: 0.02s
 Optimization completed successfully for Test 0 with M = 5 and Terminal Cost!
-Final cost: 1.234809652874145e-05
-Initial state: [0.    0.003]
-Final state: [0. 0.]
+Final cost: 0.001099832001163446
+Initial state: [0.011 0.003]
+Final state: [-0. -0.]
 terminal cost 0
 Solver time: 0.20s
 Optimization completed successfully for Test 0 with N+M  = 545 and without Terminal Cost!
-Final cost: 9.066111959042653e-06
-Initial state: [0.    0.003]
+Final cost: 0.000767437174757032
+Initial state: [0.011 0.003]
 Final state: [0. 0.]
 terminal cost 0
 Solver time: 0.01s
 Optimization completed successfully for Test 9 with M = 5 and without Terminal Cost!
-Final cost: 0.00020648088635594994
-Initial state: [ 0.012 -0.015]
-Final state: [ 0.    -0.008]
+Final cost: 0.00012340016375433671
+Initial state: [-0.008  0.024]
+Final state: [ 0. -0.]
 terminal cost (100000*nn_func(opti128_x_6){0})
 Solver time: 0.02s
 Optimization completed successfully for Test 0 with M = 5 and Terminal Cost!
-Final cost: 0.00025909488260165666
-Initial state: [ 0.012 -0.015]
-Final state: [0. 0.]
+Final cost: 0.00012350256411603364
+Initial state: [-0.008  0.024]
+Final state: [-0. -0.]
 terminal cost 0
 Solver time: 0.20s
 Optimization completed successfully for Test 0 with N+M  = 550 and without Terminal Cost!
-Final cost: 0.00018407690514162846
-Initial state: [ 0.012 -0.015]
-Final state: [ 0. -0.]
-Average cost without terminal with M: 0.0014342996143290204
-Average cost with terminal with M: 0.0016769685939247464
-Average cost without terminal with N+M: 0.0011844038602628342
-Total count of without terminal with M and zero final state: 0
-Total count of without terminal with M and nonzero final state: 10
+Final cost: 0.00011489678142877824
+Initial state: [-0.008  0.024]
+Final state: [0. 0.]
+Average cost without terminal with M: 0.0013237973653739473
+Average cost with terminal with M: 0.0015494705137067376
+Average cost without terminal with N+M: 0.001095671548012908
+Total count of without terminal with M and zero final state: 2
+Total count of without terminal with M and nonzero final state: 8
 Total count of with terminal with M and zero final state: 10
 Total count of with terminal with M and nonzero final state: 0
 Total count of without terminal with N+M and zero final state: 10
