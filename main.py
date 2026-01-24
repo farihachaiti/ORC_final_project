@@ -336,9 +336,21 @@ if __name__=='__main__':
         final_state = np.concatenate([q_sol[:, -1], dq_sol[:, -1]])
         print(f"Initial state: {x_init_test}")
         print(f"Final state: {final_state}")
-        if np.allclose(final_state, np.zeros_like(final_state), atol=1e-3):
+        norm = np.linalg.norm(final_state)
+
+        if norm < 1e-3:
+            label = "converged"
+        elif norm < 5e-3:
+            label = "near_equilibrium"
+        else:
+            label = "nonconverged"
+
+
+        if label == "converged":
+            # treat as non-zero final state
             Costs_zero_with_M_without_terminal.append(final_state)
         else:
+            # treat as (effectively) zero
             Costs_nonzero_with_M_without_terminal.append(final_state)
         J_all_costs_without_terminal_with_M.append(J)
         
@@ -398,9 +410,21 @@ if __name__=='__main__':
         final_state = np.concatenate([q_sol[:, -1], dq_sol[:, -1]])
         print(f"Initial state: {x_init_test}")
         print(f"Final state: {final_state}")
-        if np.allclose(final_state, np.zeros_like(final_state), atol=1e-3):
+        norm = np.linalg.norm(final_state)
+
+        if norm < 1e-3:
+            label = "converged"
+        elif norm < 5e-3:
+            label = "near_equilibrium"
+        else:
+            label = "nonconverged"
+
+
+        if label == "converged":
+            # treat as non-zero final state
             Costs_zero_with_M_with_terminal.append(final_state)
         else:
+            # treat as (effectively) zero
             Costs_nonzero_with_M_with_terminal.append(final_state)
         J_all_costs_with_terminal_with_M.append(J)
         # Display the motion
@@ -459,9 +483,21 @@ if __name__=='__main__':
         final_state = np.concatenate([q_sol[:, -1], dq_sol[:, -1]])
         print(f"Initial state: {x_init_test}")
         print(f"Final state: {final_state}")
-        if np.allclose(final_state, np.zeros_like(final_state), atol=1e-3):
+        norm = np.linalg.norm(final_state)
+
+        if norm < 1e-3:
+            label = "converged"
+        elif norm < 5e-3:
+            label = "near_equilibrium"
+        else:
+            label = "nonconverged"
+
+
+        if label == "converged":
+            # treat as non-zero final state
             Costs_zero_with_N_M_without_terminal.append(final_state)
         else:
+            # treat as (effectively) zero
             Costs_nonzero_with_N_M_without_terminal.append(final_state)
         J_all_costs_without_terminal_with_N_M.append(J)
         # Display the motion

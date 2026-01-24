@@ -26,7 +26,10 @@ class NeuralNetwork(nn.Module):
         x = x.to(next(self.parameters()).device)  # Move input to model's device
 
         out = self.linear_stack(x) * self.ub
-        return out
+        # Lyapunov structure
+        Vf = torch.sum(out**2, dim=-1, keepdim=True)
+        #out = torch.relu(out)
+        return Vf
    
     def initialize_weights(self):
         for layer in self.linear_stack:
