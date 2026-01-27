@@ -273,7 +273,7 @@ if __name__=='__main__':
     print("Model training mode:", net.training)
 
 
-
+    t0 = time.time()
     # Training loop
     for i in range(100):
         # Zero the parameter gradients
@@ -300,7 +300,7 @@ if __name__=='__main__':
         
         #if i % 100 == 0:  # Print every 100 epochs
         print(f'Epoch [{i+1}/1000], Loss: {loss.item():.4f}')
-
+    print(f"Training time: {time.time() - t0:.2f}s")
     # After training, get the terminal cost prediction
     with torch.no_grad():
         #X_init_tensor = torch.tensor(X_init, dtype=torch.float32).unsqueeze(0)  # Add batch dimension
